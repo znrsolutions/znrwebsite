@@ -1,0 +1,176 @@
+@use "../../../styles/variables.scss" as *;
+@use "../../../styles/mixins.scss" as *;
+
+
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: $white;
+    border-bottom: 1px solid $gray-200;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+
+    img {
+        height: auto;
+        width: 100px;
+    }
+}
+
+.logo {
+    img {
+        width: 90px;
+
+        @include respond("laptop") {
+            width: get-vw(100px);
+            height: get-vw(42px);
+            object-fit: contain;
+        }
+    }
+}
+
+/* 🍔 MOBILE MENU ICON */
+.menuIcon {
+    width: 24px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    span {
+        height: 2px;
+        background: $black;
+        transition: $transition;
+    }
+}
+
+.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* 📱 MOBILE MENU */
+.mobileMenu {
+    display: none;
+    flex-direction: column;
+    background: $white;
+    padding: 20px;
+
+    a {
+        padding: 12px 0;
+        border-bottom: 1px solid $gray-200;
+    }
+}
+
+.show {
+    display: flex;
+}
+
+/* ❌ HIDE DESKTOP ELEMENTS (MOBILE FIRST) */
+.desktopMenu,
+.cta {
+    display: none;
+}
+
+/* ========================= */
+/* 💻 DESKTOP (≥1024px) */
+/* ========================= */
+
+@include respond("laptop") {
+
+    .header {
+        border-bottom: none;
+        margin-top: get-vw(50px);
+    }
+
+    .container {
+        width: max-content;
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: space-between;
+        column-gap: get-vw(40px);
+        align-items: center;
+        height: get-vw(72px);
+        border-radius: get-vw(22px);
+        background: $white;
+        box-shadow: 0 get-vw(4px) get-vw(4px) 0 rgba(0, 0, 0, 0.25);
+        padding: get-vw(12px) get-vw(15px);
+    }
+
+
+    /* Hide hamburger */
+    .menuIcon {
+        display: none;
+    }
+
+    /* Hide mobile menu */
+    .mobileMenu {
+        display: none !important;
+    }
+
+    /* Show desktop nav */
+    .desktopMenu {
+        display: flex;
+        gap: get-vw(30px);
+        align-items: center;
+
+        a,
+        span {
+            font-family: $font-primary;
+            color: $text-primary;
+            font-size: get-vw(14px);
+            cursor: pointer;
+            position: relative;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    /* Dropdown placeholder */
+    .dropdown {
+        position: relative;
+    }
+
+    /* CTA BUTTON */
+    .cta {
+        display: block;
+
+        button {
+            background: $primary;
+            color: $white;
+            border: none;
+            padding: get-vw(14px) get-vw(18px);
+            border-radius: get-vw(13px);
+            font-size: get-vw(16px);
+            font-weight: 500;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+    }
+}

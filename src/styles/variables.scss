@@ -1,0 +1,33 @@
+// 🎨 COLORS
+$primary: #1710D8;
+
+$black: #000000;
+$white: #ffffff;
+
+// Shades (recommended for SaaS UI)
+$gray-100: #f8fafc;
+$gray-200: #e5e7eb;
+$gray-300: #d1d5db;
+$gray-500: #6b7280;
+$gray-700: #374151;
+$gray-900: #111827;
+
+// 🎯 TEXT COLORS
+$text-primary: $gray-900;
+$text-secondary: $gray-500;
+
+// 🎨 BACKGROUNDS
+$bg-main: $white;
+$bg-light: $gray-100;
+
+// 🔤 FONTS
+$font-primary: "Inter", sans-serif;
+$font-secondary: "Poppins", sans-serif;
+
+// 📏 BORDER RADIUS
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 16px;
+
+// ⚡ TRANSITIONS
+$transition: all 0.3s ease;

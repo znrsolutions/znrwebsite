@@ -1,0 +1,49 @@
+@use "./variables.scss" as *;
+@use 'sass:math';
+@use 'sass:meta';
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-primary;
+    background: $bg-main;
+    color: $text-primary;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: $font-primary;
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $font-secondary;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+p {
+    font-size: 16px;
+    color: $text-secondary;
+}
