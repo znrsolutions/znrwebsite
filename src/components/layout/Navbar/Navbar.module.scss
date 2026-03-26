@@ -140,9 +140,11 @@
         span {
             font-family: $font-primary;
             color: $text-primary;
-            font-size: get-vw(14px);
+            font-size: get-vw(18px);
             cursor: pointer;
             position: relative;
+            display: flex;
+
 
             &:hover {
                 color: $primary;
@@ -165,7 +167,7 @@
             border: none;
             padding: get-vw(14px) get-vw(18px);
             border-radius: get-vw(13px);
-            font-size: get-vw(16px);
+            font-size: get-vw(20px);
             font-weight: 500;
 
             &:hover {

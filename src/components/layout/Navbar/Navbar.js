@@ -28,11 +28,11 @@ export default function Navbar() {
                     <a href="/solutions">Solutions</a>
 
                     <div className={styles.dropdown}>
-                        <span>Resources ▾</span>
+                        <span>Resources</span>
                     </div>
 
                     <div className={styles.dropdown}>
-                        <span>Industries ▾</span>
+                        <span>Industries</span>
                     </div>
                 </nav>
 

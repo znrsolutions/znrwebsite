@@ -1,0 +1,123 @@
+@use "../../../styles/variables.scss" as *;
+@use "../../../styles/mixins.scss" as *;
+
+.footer {
+    background: $black;
+    color: $white;
+    padding: 40px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* MOBILE FIRST (STACKED) */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* BRAND */
+.brand {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    p {
+        font-size: 14px;
+        color: $gray-300;
+        line-height: 1.6;
+    }
+}
+
+/* CTA BUTTON */
+.cta {
+    background: $primary;
+    color: $white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    width: fit-content;
+    font-size: 14px;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+/* COLUMN */
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h4 {
+        font-family: $font-secondary;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    a {
+        color: $gray-300;
+        font-size: 14px;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    p {
+        font-size: 14px;
+        color: $gray-300;
+    }
+}
+
+/* SOCIALS */
+.socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+
+    span {
+        cursor: pointer;
+        font-size: 14px;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+/* BOTTOM */
+.bottom {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 12px;
+    color: $gray-500;
+}
+
+/* ========================= */
+/* 💻 DESKTOP (≥1024px) */
+/* ========================= */
+
+@include respond("laptop") {
+
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .brand {
+        max-width: 300px;
+    }
+
+    .column {
+        min-width: 180px;
+    }
+
+    .bottom {
+        margin-top: 50px;
+        font-size: 13px;
+    }
+}
