@@ -1,0 +1,476 @@
+@use "../../../styles/variables.scss" as *;
+@use "../../../styles/mixins.scss" as *;
+
+/* ================= CAREERS ================= */
+
+/* ================= HERO ================= */
+.hero {
+  padding: 100px 20px 60px;
+  background: #f5f5f5;
+}
+
+/* TOP CONTENT */
+.heroTop {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: $black;
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 15px;
+    color: $gray-600;
+  }
+}
+
+/* BUTTON */
+.heroBtn {
+  margin-top: 20px;
+  padding: 12px 24px;
+
+  border-radius: 10px;
+  border: none;
+
+  background: $primary;
+  color: $white;
+
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* IMAGE */
+.heroImage {
+  max-width: 1100px;
+  margin: auto;
+
+  img {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+}
+
+/* DESKTOP */
+@include respond("laptop") {
+
+  .heroTop h1 {
+    font-size: get-vw(64px);
+  }
+
+  .heroTop p {
+    font-size: get-vw(18px);
+  }
+
+  .heroBtn {
+    padding: get-vw(14px) get-vw(30px);
+    font-size: get-vw(16px);
+  }
+
+  .heroImage {
+    max-width: get-vw(1200px);
+  }
+
+}
+
+/* ================= GROWTH SECTION ================= */
+.growth {
+  padding: 80px 20px;
+  background: #f5f5f5;
+}
+
+/* CONTAINER */
+.growthContainer {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* TITLE */
+.growthContainer h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: $black;
+}
+
+/* CONTENT */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  p {
+    font-size: 15px;
+    color: $gray-600;
+    line-height: 1.7;
+  }
+}
+
+/* DESKTOP */
+@include respond("laptop") {
+
+  .growthContainer h2 {
+    font-size: get-vw(48px);
+  }
+
+  .content {
+    flex-direction: row;
+    gap: get-vw(60px);
+
+    p {
+      width: 50%;
+      font-size: get-vw(16px);
+    }
+  }
+
+}
+
+
+
+
+
+/* BENEFITS */
+.benefits {
+  padding: 40px 20px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+}
+
+/* GRID */
+.grid {
+  max-width: 1000px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+/* CARD */
+.card {
+  background: $white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* ================= JOIN SECTION ================= */
+.join {
+  padding: 80px 20px;
+  background: #f5f5f5;
+}
+
+/* CONTAINER */
+.joinContainer {
+  max-width: 1100px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* LEFT */
+.left {
+  h2 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 15px;
+    color: $gray-600;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    max-width: 420px;
+  }
+}
+
+/* RIGHT */
+.right {
+  img {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+}
+
+/* DESKTOP */
+@include respond("laptop") {
+
+  .joinContainer {
+    flex-direction: row;
+    align-items: center;
+    gap: get-vw(60px);
+  }
+
+  .left {
+    width: 45%;
+
+    h2 {
+      font-size: get-vw(48px);
+    }
+
+    p {
+      font-size: get-vw(16px);
+    }
+  }
+
+  .right {
+    width: 55%;
+  }
+
+}
+
+
+/* ================= JOBS ================= */
+.jobs {
+  padding: 80px 20px;
+  background: #f5f5f5;
+  text-align: center;
+
+  h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+}
+
+/* GRID */
+.jobsGrid {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+/* CARD */
+.jobCard {
+  background: #eee;
+  padding: 25px;
+  border-radius: 20px;
+
+  text-align: left;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+}
+
+/* META */
+.meta {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  color: $gray-600;
+  margin-bottom: 25px;
+}
+
+/* BUTTON */
+.jobCard button {
+  display: block;
+  margin: auto;
+
+  background: linear-gradient(180deg, #4f46e5, #1e1b8f);
+  color: $white;
+
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+/* DESKTOP */
+@include respond("laptop") {
+
+  .jobs h2 {
+    font-size: get-vw(48px);
+  }
+
+  .jobsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: get-vw(40px);
+  }
+
+  .jobCard {
+    padding: get-vw(30px);
+
+    h3 {
+      font-size: get-vw(20px);
+    }
+  }
+
+}
+
+
+
+/* JOBS */
+.jobs {
+  padding: 40px 20px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+/* JOB CARD */
+.jobCard {
+  max-width: 900px;
+  margin: 10px auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: $white;
+  padding: 20px;
+  border-radius: 12px;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+  button {
+    background: $primary;
+    color: $white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
+
+/* CTA */
+.cta {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, #4f46e5, #1e1b8f);
+  color: $white;
+
+  button {
+    margin-top: 15px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: none;
+    background: $white;
+    color: $black;
+  }
+}
+
+
+/* ================= TRUST SECTION ================= */
+.trust {
+  padding: 80px 20px;
+  background: #f5f5f5;
+}
+
+/* CONTAINER */
+.trustContainer {
+  max-width: 1100px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* IMAGE */
+.image {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 260px;
+    height: 320px;
+    object-fit: cover;
+
+    /* 🔥 Oval shape */
+    border-radius: 300px 0 300px 300px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+}
+
+/* CONTENT */
+.content {
+  text-align: center;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 15px;
+    color: $gray-600;
+    line-height: 1.7;
+  }
+}
+
+/* DESKTOP */
+@include respond("laptop") {
+
+  .trustContainer {
+    flex-direction: row;
+    align-items: center;
+    gap: get-vw(60px);
+  }
+
+  .image {
+    width: 45%;
+    justify-content: flex-start;
+
+    img {
+      width: get-vw(320px);
+      height: get-vw(400px);
+    }
+  }
+
+  .content {
+    width: 55%;
+    text-align: left;
+
+    h2 {
+      font-size: get-vw(42px);
+    }
+
+    p {
+      font-size: get-vw(16px);
+    }
+  }
+
+}
+
+/* DESKTOP */
+@include respond("laptop") {
+
+  .hero h1 {
+    font-size: get-vw(48px);
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
