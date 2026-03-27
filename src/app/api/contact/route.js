@@ -11,7 +11,7 @@ export async function POST(req) {
       port: 465,
       secure: true,
       auth: {
-        user: "info@mr-events.net",
+        user: "tech@znrsolutions.com",
         pass: process.env.EMAIL_PASS,
       },
     });
@@ -20,7 +20,7 @@ export async function POST(req) {
 
     // ✅ 1. SEND TO COMPANY
     await transporter.sendMail({
-      from: `"ZNR Website" <info@mr-events.net>`,
+      from: `"ZNR Website" <tech@znrsolutions.com>`,
       to: "tech@znrsolutions.com",
       replyTo: email,
       subject: `New Contact Form - ${name}`,
@@ -36,7 +36,7 @@ export async function POST(req) {
 
     // ✅ 2. AUTO-REPLY TO USER
     await transporter.sendMail({
-      from: `"ZNR Solutions" <info@mr-events.net>`,
+      from: `"ZNR Solutions" <tech@znrsolutions.com>`,
       to: email, // 👈 send to user
       subject: "We received your message ✅",
       html: `
