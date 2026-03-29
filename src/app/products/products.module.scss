@@ -5,121 +5,210 @@
 .hero {
   padding: 120px 20px 80px;
   text-align: center;
-  background: #f5f5f5;
-}
+  background: $white;
+  position: relative;
+  overflow: hidden;
 
-/* CONTENT */
-.heroContent {
-  max-width: 800px;
-  margin: auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-
-  h1 {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 1.3;
-    color: $black;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
   }
 }
 
-/* BUTTON */
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  h1 {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: $black;
+    letter-spacing: -0.5px;
+
+    em {
+      font-style: normal;
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 6px 16px;
+  border-radius: 100px;
+}
+
+.heroSub {
+  font-size: 15px;
+  color: $gray-500;
+  line-height: 1.7;
+  max-width: 560px;
+}
+
 .heroBtn {
-  background: $primary;
+  background: #3b82f6;
   color: $white;
   border: none;
-
-  padding: 12px 22px;
+  padding: 13px 28px;
   border-radius: 10px;
-
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-
-  transition: 0.3s;
+  transition: 0.2s;
 
   &:hover {
-    opacity: 0.9;
+    background: #2563eb;
     transform: translateY(-2px);
   }
 }
 
-/* DESKTOP */
-@include respond("laptop") {
+/* ================= FEATURED ================= */
+.featured {
+  padding: 80px 20px;
+  background: $white;
 
-  .hero {
-    padding: get-vw(160px) 20px get-vw(100px);
+  &.alt {
+    background: #f8f9ff;
   }
+}
+
+.featuredContainer {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.image {
+  img {
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: $black;
+    letter-spacing: -0.5px;
+  }
+
+  p {
+    font-size: 15px;
+    color: $gray-600;
+    line-height: 1.75;
+  }
+}
+
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 100px;
+  width: fit-content;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+
+  li {
+    font-size: 14px;
+    color: $gray-600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #3b82f6;
+      flex-shrink: 0;
+    }
+  }
+}
+
+/* ================= DESKTOP ================= */
+@include respond("laptop") {
 
   .heroContent {
     h1 {
       font-size: get-vw(56px);
-      max-width: get-vw(900px);
     }
   }
 
-  .heroBtn {
-    padding: get-vw(14px) get-vw(28px);
+  .heroSub {
     font-size: get-vw(16px);
-    border-radius: get-vw(12px);
   }
 
-}
-
-/* ================= FEATURED PRODUCT ================= */
-.featured {
-  padding: 40px 20px;
-  background: #f5f5f5;
-}
-
-/* CONTAINER */
-.featuredContainer {
-  max-width: 1100px;
-  margin: auto;
-
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-/* IMAGE */
-.image {
-  img {
-    width: 100%;
-    border-radius: 10px;
-  }
-}
-
-/* CONTENT */
-.content {
-  text-align: left;
-
-  h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10px;
+  .heroBtn {
+    padding: get-vw(14px) get-vw(30px);
+    font-size: get-vw(16px);
   }
 
-  p {
-    font-size: 14px;
-    color: $gray-600;
-    line-height: 1.6;
+  .featured {
+    padding: get-vw(100px) 20px;
   }
-}
-
-/* DESKTOP */
-@include respond("laptop") {
 
   .featuredContainer {
-    gap: get-vw(30px);
+    flex-direction: row;
+    align-items: center;
+    gap: get-vw(80px);
+
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .image {
+    width: 50%;
+    flex-shrink: 0;
   }
 
   .content {
-    h3 {
-      font-size: get-vw(28px);
+    width: 50%;
+
+    h2 {
+      font-size: get-vw(40px);
     }
 
     p {
@@ -127,4 +216,71 @@
     }
   }
 
+  .featureList {
+    li {
+      font-size: get-vw(15px);
+    }
+  }
+
+}
+
+
+.comingSoon {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  background: #0f1520;
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+}
+
+.comingSoonInner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  padding: 20px;
+}
+
+.comingSoonLabel {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #38BDF8;
+}
+
+.comingSoonSub {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.3);
+  line-height: 1.6;
 }
