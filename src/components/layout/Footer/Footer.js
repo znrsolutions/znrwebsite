@@ -1,76 +1,83 @@
+// updated
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Footer.module.scss";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
-
-//updated code file
 export default function Footer() {
   return (
     <footer className={styles.footer}>
+
+      <div className={styles.topBar}>
+        <div className={styles.topBarInner}>
+          <span>Revolutionizing Finance & Retail with Payment Solutions</span>
+          {/* <a href="mailto:tech@znrsolutions.com">tech@znrsolutions.com</a> */}
+        </div>
+      </div>
+
       <div className={styles.container}>
 
-        {/* LEFT */}
+        {/* BRAND */}
         <div className={styles.brand}>
           <Image src="/logow.png" alt="ZNR" width={120} height={40} />
-
           <p>
-            We empower businesses with innovative digital solutions, 
-            blending technology, 
-            strategy, and creativity 
-            to drive measurable growth.
+            We empower businesses with innovative digital solutions,
+            blending technology, strategy, and creativity to drive
+            measurable growth across finance and retail.
           </p>
-
-          {/* <button className={styles.cta}>
-            Schedule Consultation
-          </button> */}
+          <div className={styles.socials}>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><FaLinkedin /></a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><FaFacebookF /></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><FaInstagram /></a>
+            <a href="https://youtube.com" target="_blank" aria-label="YouTube"><FaYoutube /></a>
+          </div>
         </div>
 
-        {/* MIDDLE */}
+        {/* COMPANY */}
         <div className={styles.column}>
-          <h4>About the project</h4>
-
+          <h4>Company</h4>
           <Link href="/">Home</Link>
           <Link href="/about">About Us</Link>
-          <Link href="/privacy-policy">Privacy Policy</Link>
-          <Link href="/terms">Terms of Service</Link>
-          {/* <Link href="/cookies">Cookie Policy</Link> */}
+          <Link href="/solutions">Solutions</Link>
+          <Link href="/products">Products</Link>
+          <Link href="/industries">Industries</Link>
         </div>
 
-        {/* RIGHT */}
+        {/* LEGAL */}
         <div className={styles.column}>
-          <h4>Contacts</h4>
+          <h4>Legal</h4>
+          <Link href="/privacy-policy">Privacy Policy</Link>
+          <Link href="/terms">Terms of Service</Link>
+        </div>
 
+        {/* CONTACT */}
+        <div className={styles.column}>
+          <h4>Contact</h4>
           <div className={styles.contactItem}>
-            <FaPhone /> <span>+94 776 331 030</span>
+            <FaPhone />
+            <span>+94 776 331 030</span>
           </div>
-
           <div className={styles.contactItem}>
-            <FaEnvelope /> <span>tech@znrsolutions.com</span>
+            <FaEnvelope />
+            <span>tech@znrsolutions.com</span>
           </div>
-
           <div className={styles.contactItem}>
             <FaMapMarkerAlt />
-            <span>
-              400 Sri Sumanatissa Mawatha, Colombo 01300
-            </span>
-          </div>
-
-          <div className={styles.socials}>
-            <FaLinkedin />
-            <FaFacebookF />
-            <FaInstagram />
-            <FaYoutube />
+            <span>400 Sri Sumanatissa Mawatha,<br />Colombo 01300, Sri Lanka</span>
           </div>
         </div>
 
       </div>
+
+      {/* DIVIDER */}
+      <div className={styles.divider}></div>
 
       {/* BOTTOM */}
       <div className={styles.bottom}>
-        Copyright © 2026. All rights reserved. Designed & Developed by The Mavericks{" "}
-        <a href="https://znrsolutions.com">znrsolutions.com</a>
+        <span>© 2026 ZNR Solutions. All rights reserved.</span>
+        <span>Designed & Developed by <a href="https://znrsolutions.com">The Mavericks</a></span>
       </div>
+
     </footer>
   );
 }
