@@ -19,9 +19,9 @@ export default function Footer() {
             to drive measurable growth.
           </p>
 
-          <button className={styles.cta}>
+          {/* <button className={styles.cta}>
             Schedule Consultation
-          </button>
+          </button> */}
         </div>
 
         {/* MIDDLE */}
