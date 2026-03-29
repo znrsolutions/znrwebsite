@@ -3,6 +3,8 @@ import Link from "next/link";
 import styles from "./Footer.module.scss";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
+
+//updated code file
 export default function Footer() {
   return (
     <footer className={styles.footer}>
