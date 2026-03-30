@@ -254,7 +254,7 @@ export default function Home() {
           <div className={styles.divider}></div>
 
           <p className={styles.sub}>
-            Let's map out your team needs, technologies, and timelines — and
+            Let's map out your team needs, technologies, and timelines and
             build the payment infrastructure your business deserves.
           </p>
 

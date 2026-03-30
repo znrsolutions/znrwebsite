@@ -1,7 +1,8 @@
 import "./../styles/globals.scss";
 import Navbar from "../components/layout/Navbar/Navbar";
 import Footer from "../components/layout/Footer/Footer";
-import ChatWidget from "../components/ChatWidget/ChatWidget"; // ✅ already imported
+import ChatWidget from "../components/ChatWidget/ChatWidget";
+import { Toaster } from "react-hot-toast"; // ✅ ADD THIS
 
 export const metadata = {
   title: "ZNR Tech",
@@ -35,8 +36,39 @@ export default function RootLayout({ children }) {
 
         <Footer />
 
-        {/* 🔥 ADD THIS LINE (THIS WAS MISSING) */}
+        {/* 🔥 CHAT */}
         <ChatWidget />
+
+        {/* 🔥 TOAST NOTIFICATIONS */}
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            duration: 4000,
+            style: {
+              background: "#111",
+              color: "#fff",
+              borderRadius: "12px",
+              padding: "14px 18px",
+              fontSize: "14px",
+            },
+            success: {
+              style: {
+                background: "#1710D8", // ZNR brand color
+                color: "#fff",
+              },
+              iconTheme: {
+                primary: "#fff",
+                secondary: "#1710D8",
+              },
+            },
+            error: {
+              style: {
+                background: "#ff4d4f",
+                color: "#fff",
+              },
+            },
+          }}
+        />
       </body>
     </html>
   );

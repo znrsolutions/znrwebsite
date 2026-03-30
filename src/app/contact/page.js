@@ -1,4 +1,5 @@
 "use client";
+import toast from "react-hot-toast";
 
 import { useState } from "react";
 import styles from "./contact.module.scss";
@@ -13,48 +14,109 @@ export default function Contact() {
     message: "",
   });
 
+  const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
   // HANDLE INPUT
   const handleChange = (e) => {
+    const { name, value } = e.target;
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+
+    // REMOVE ERROR WHEN USER TYPES
+    setErrors({
+      ...errors,
+      [name]: "",
+    });
+  };
+
+  // VALIDATION FUNCTION
+  const validate = () => {
+    let newErrors = {};
+
+    // NAME
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    } else if (formData.name.length < 3) {
+      newErrors.name = "Name must be at least 3 characters";
+    }
+
+    // EMAIL
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Invalid email format";
+    }
+
+    // PHONE (optional)
+    const phoneRegex = /^[0-9]{10,15}$/;
+    if (formData.phone && !phoneRegex.test(formData.phone)) {
+      newErrors.phone = "Enter valid phone number (10–15 digits)";
+    }
+
+    // WEBSITE (optional)
+    const urlRegex = /^(https?:\/\/)?([\w\d-]+\.)+\w{2,}(\/.*)?$/;
+    if (formData.website && !urlRegex.test(formData.website)) {
+      newErrors.website = "Enter valid website URL";
+    }
+
+    // MESSAGE
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    } else if (formData.message.length < 10) {
+      newErrors.message = "Message must be at least 10 characters";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   // HANDLE SUBMIT
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+  e.preventDefault();
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        body: JSON.stringify(formData),
+  // VALIDATE FIRST
+  if (!validate()) return;
+
+  setLoading(true);
+
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      toast.success("Message sent successfully!");
+
+      setFormData({
+        name: "",
+        website: "",
+        email: "",
+        phone: "",
+        message: "",
       });
 
-      const data = await res.json();
-
-      if (data.success) {
-        alert("Message sent successfully!");
-        setFormData({
-          name: "",
-          website: "",
-          email: "",
-          phone: "",
-          message: "",
-        });
-      } else {
-        alert("Failed to send message");
-      }
-
-    } catch (err) {
-      alert("Error sending message");
+      setErrors({});
+    } else {
+      toast.error("Failed to send message");
     }
 
-    setLoading(false);
-  };
+  } catch (err) {
+    toast.error("Something went wrong");
+  }
+
+  setLoading(false);
+};
 
   return (
     <main className={styles.contactPage}>
@@ -79,13 +141,12 @@ export default function Contact() {
       <section className={styles.contact}>
         <div className={styles.container}>
 
-          {/* TOP TEXT */}
           <div className={styles.top}>
             <h2>Get in touch with us!</h2>
 
             <p>
               Whether you want to extend your in-house team or need assistance with
-              development, quality assurance or support, Creative Software can help.
+              development, quality assurance or support, we can help.
             </p>
           </div>
 
@@ -94,6 +155,7 @@ export default function Contact() {
 
             <div className={styles.grid}>
 
+              {/* NAME */}
               <div className={styles.field}>
                 <label>Name</label>
                 <input
@@ -102,10 +164,12 @@ export default function Contact() {
                   onChange={handleChange}
                   type="text"
                   placeholder="Enter name"
-                  required
+                  className={errors.name ? styles.inputError : ""}
                 />
+                {errors.name && <span className={styles.error}>{errors.name}</span>}
               </div>
 
+              {/* WEBSITE */}
               <div className={styles.field}>
                 <label>Your Company website</label>
                 <input
@@ -114,9 +178,12 @@ export default function Contact() {
                   onChange={handleChange}
                   type="text"
                   placeholder="Enter company website link"
+                  className={errors.website ? styles.inputError : ""}
                 />
+                {errors.website && <span className={styles.error}>{errors.website}</span>}
               </div>
 
+              {/* EMAIL */}
               <div className={styles.field}>
                 <label>E-mail</label>
                 <input
@@ -125,10 +192,12 @@ export default function Contact() {
                   onChange={handleChange}
                   type="email"
                   placeholder="Enter email address"
-                  required
+                  className={errors.email ? styles.inputError : ""}
                 />
+                {errors.email && <span className={styles.error}>{errors.email}</span>}
               </div>
 
+              {/* PHONE */}
               <div className={styles.field}>
                 <label>Phone (Optional)</label>
                 <input
@@ -137,12 +206,14 @@ export default function Contact() {
                   onChange={handleChange}
                   type="text"
                   placeholder="Enter phone number"
+                  className={errors.phone ? styles.inputError : ""}
                 />
+                {errors.phone && <span className={styles.error}>{errors.phone}</span>}
               </div>
 
             </div>
 
-            {/* FULL WIDTH */}
+            {/* MESSAGE */}
             <div className={styles.full}>
               <label>What are you planning to build?</label>
               <input
@@ -151,8 +222,9 @@ export default function Contact() {
                 onChange={handleChange}
                 type="text"
                 placeholder="Message"
-                required
+                className={errors.message ? styles.inputError : ""}
               />
+              {errors.message && <span className={styles.error}>{errors.message}</span>}
             </div>
 
             {/* CHECKBOX */}
@@ -174,7 +246,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* MAP SECTION */}
+      {/* MAP */}
       <section className={styles.mapSection}>
         <div className={styles.mapContainer}>
 

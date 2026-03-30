@@ -91,11 +91,13 @@ export default function Navbar() {
       <span>Industries</span>
       <Link href="/industries/fintech">Fintech</Link>
       <Link href="/industries/retail">Retail</Link>
+      <Link href="/industries/security">Security</Link>
+      
     </div>
 
     <div className={styles.mobileGroup}>
       <span>Resources</span>
-      {/* <Link href="/resources/blog">Blog</Link> */}
+      <Link href="/resources/blog">Blog</Link> 
       {/* <Link href="/resources/case-studies">Case Studies</Link> */}
     </div>
 

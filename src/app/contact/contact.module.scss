@@ -251,3 +251,14 @@
     cursor: pointer;
   }
 }
+
+.error {
+  color: #ff4d4f;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+.inputError {
+  border: 1px solid #ff4d4f !important;
+}

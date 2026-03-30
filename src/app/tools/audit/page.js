@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import styles from "./Audit.module.scss";
+import CalendlyButton from "@/components/CalendlyButton";
+import toast from "react-hot-toast"; // ✅ ADD
 
 export default function AuditPage() {
   const [url, setUrl] = useState("");
@@ -8,27 +10,46 @@ export default function AuditPage() {
   const [loading, setLoading] = useState(false);
 
   const runAudit = async () => {
-    if (!url) return alert("Enter a URL");
+    // ✅ URL VALIDATION
+    if (!url.trim()) {
+      toast.error("Enter a URL");
+      return;
+    }
+
+    // Optional: basic URL format check
+    const urlRegex = /^(https?:\/\/)/;
+    if (!urlRegex.test(url)) {
+      toast.error("Please include http:// or https://");
+      return;
+    }
 
     setLoading(true);
     setReport(null);
 
+    const toastId = toast.loading("Running audit...");
+
     try {
       const res = await fetch("/api/audit", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ url }),
       });
 
       const data = await res.json();
 
       if (data.error) {
-        alert(data.error);
+        toast.error(data.error, { id: toastId });
         return;
       }
 
       setReport(data.lighthouseResult.categories);
+
+      toast.success("Audit completed!", { id: toastId });
+
     } catch (err) {
-      alert("Something went wrong");
+      toast.error("Something went wrong", { id: toastId });
     } finally {
       setLoading(false);
     }
@@ -79,7 +100,6 @@ export default function AuditPage() {
 
             return (
               <div key={key} className={styles.card}>
-                
                 <div
                   className={styles.circle}
                   style={{
@@ -101,7 +121,10 @@ export default function AuditPage() {
         <div className={styles.cta}>
           <h2>Ready to fix these issues?</h2>
           <p>Let ZNR Solutions improve your website performance</p>
-          <a href="/contact">Get Free Consultation</a>
+
+          <div className={styles.btnRow}>
+            <CalendlyButton />
+          </div>
         </div>
       )}
     </div>
