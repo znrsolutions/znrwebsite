@@ -1,6 +1,7 @@
 import "./../styles/globals.scss";
 import Navbar from "../components/layout/Navbar/Navbar";
 import Footer from "../components/layout/Footer/Footer";
+import ChatWidget from "../components/ChatWidget/ChatWidget"; // ✅ already imported
 
 export const metadata = {
   title: "ZNR Tech",
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
+
       <body
         style={{
           display: "flex",
@@ -26,10 +28,15 @@ export default function RootLayout({ children }) {
         }}
       >
         <Navbar />
+
         <main style={{ flex: 1 }}>
           {children}
         </main>
+
         <Footer />
+
+        {/* 🔥 ADD THIS LINE (THIS WAS MISSING) */}
+        <ChatWidget />
       </body>
     </html>
   );

@@ -1,0 +1,88 @@
+/* ================= FLOATING AUDIT BUTTON ================= */
+
+.widget {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+}
+
+/* BUTTON */
+.button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 18px;
+  border-radius: 50px;
+  border: none;
+
+  background: linear-gradient(135deg, #1710d8, #4338ca);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(23,16,216,0.4);
+  transition: all 0.3s ease;
+
+  svg {
+    font-size: 16px;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(23,16,216,0.6);
+  }
+}
+
+/* 📱 MOBILE (ICON ONLY) */
+@media (max-width: 768px) {
+  .widget {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .button {
+    padding: 12px 16px;
+    font-size: 13px;
+
+    svg {
+      font-size: 14px;
+    }
+  }
+}
+
+.button {
+  animation: bump 2.5s ease-in-out infinite,
+             pulseGlow 2.5s infinite;
+}
+
+/* 🔵 BUMP (movement) */
+@keyframes bump {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  10% {
+    transform: translateY(-3px) scale(1.05);
+  }
+  20% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ✨ PULSE (glow) */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(23,16,216, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(23,16,216, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(23,16,216, 0);
+  }
+}

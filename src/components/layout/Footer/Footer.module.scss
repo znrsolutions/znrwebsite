@@ -213,3 +213,30 @@
     justify-content: flex-start;
   }
 }
+
+
+
+.auditCTA {
+  margin-top: 20px;
+
+  p {
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: #aaa;
+  }
+}
+
+.auditBtn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #1710d8;
+  color: white;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.3s;
+
+  &:hover {
+    background: #0f0bb5;
+  }
+}
