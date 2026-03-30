@@ -74,7 +74,7 @@ export default function Footer() {
 
       {/* BOTTOM */}
       <div className={styles.bottom}>
-        <span>© 2026 ZNR Solutions. All rights reserved.</span>
+        <span>© 2026 <a href="https://znrsolutions.com">ZNR Solutions.</a> All rights reserved.</span>
         <span>Designed & Developed by <a href="https://znrsolutions.com">The Mavericks</a></span>
       </div>
 
