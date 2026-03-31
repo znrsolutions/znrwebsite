@@ -26,10 +26,10 @@ export default function Footer() {
             measurable growth across finance and retail.
           </p>
           <div className={styles.socials}>
-            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><FaLinkedin /></a>
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><FaFacebookF /></a>
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><FaInstagram /></a>
-            <a href="https://youtube.com" target="_blank" aria-label="YouTube"><FaYoutube /></a>
+            <a href="https://www.linkedin.com/company/znr-solutions-pvt-ltd/" target="_blank" aria-label="LinkedIn"><FaLinkedin /></a>
+            <a href="https://web.facebook.com/p/ZNR-Solutions-Pvt-Ltd-61572843716951/?_rdc=1&_rdr#" target="_blank" aria-label="Facebook"><FaFacebookF /></a>
+            <a href="https://www.instagram.com/znr.solutions_pvt.ltd?igsh=MTUxZ3FpZWMzMmtlaA==" target="_blank" aria-label="Instagram"><FaInstagram /></a>
+            <a href="http://www.youtube.com/@ZNRSolutions" target="_blank" aria-label="YouTube"><FaYoutube /></a>
           </div>
         </div>
 
@@ -75,7 +75,7 @@ export default function Footer() {
       {/* BOTTOM */}
       <div className={styles.bottom}>
         <span>© 2026 <a href="https://znrsolutions.com">ZNR Solutions.</a> All rights reserved.</span>
-        <span>Designed & Developed by <a href="https://znrsolutions.com">The Mavericks</a></span>
+        <span>Designed & Developed by <a>The Mavericks</a></span>
       </div>
 
     </footer>
