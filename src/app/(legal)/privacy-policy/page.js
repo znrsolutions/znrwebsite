@@ -45,7 +45,7 @@ export default function PrivacyPolicy() {
           We may also receive information about you from third parties, but only if you have given them permission to share it.
           We may collect information about you whenever you interact with us. For example, when you contact us, register our
           activities, register as a supporter, send or receive information or sign a petition, you specifically and knowingly
-          provide us with your personal information. We may also receive information about you from third parties – but only
+          provide us with your personal information. We may also receive information about you from third parties but only
           if you have given them permission to share your information.
         </p>
 

@@ -473,7 +473,7 @@ export default function Home() {
 
               <div className={styles.footer}>
                 <span>ZNR Solutions</span>
-                <small>Dec 17</small>
+                <small>Jan 01</small>
               </div>
             </a>
 
@@ -490,7 +490,7 @@ export default function Home() {
 
               <div className={styles.footer}>
                 <span>ZNR Solutions</span>
-                <small>July 30</small>
+                <small>March 30</small>
               </div>
             </a>
 
@@ -508,7 +508,7 @@ export default function Home() {
 
               <div className={styles.footer}>
                 <span>ZNR Solutions</span>
-                <small>July 22</small>
+                <small>Feb 22</small>
               </div>
             </a>
           </div>

@@ -26,16 +26,16 @@ export default function Products() {
             <span className={styles.tag} style={{ color: "#DB02DD", background: "rgba(219,2,221,0.08)", border: "1px solid rgba(219,2,221,0.2)" }}>CRM</span>
             <h2>PRIME CRM</h2>
             <p>
-              Prime CRM is a sales-focused customer relationship management platform that combines AI calling, built-in VoIP infrastructure, and seamless CRM integrations to help businesses manage customer interactions more efficiently.
+              Prime CRM is a sales focused customer relationship management platform that combines AI calling, built in VoIP infrastructure, and seamless CRM integrations to help businesses manage customer interactions more efficiently.
             </p>
             <p>
-              The platform enables teams to handle calls, automate follow-ups, track performance through real-time analytics, and close deals faster without switching between multiple tools.
+              The platform enables teams to handle calls, automate follow ups, track performance through real time analytics, and close deals faster without switching between multiple tools.
             </p>
             <ul className={styles.featureList}>
-              <li>AI-powered calling & VoIP</li>
-              <li>Real-time analytics dashboard</li>
+              <li>AI powered calling & VoIP</li>
+              <li>Real time analytics dashboard</li>
               <li>Seamless CRM integrations</li>
-              <li>Automated follow-ups</li>
+              <li>Automated follow ups</li>
             </ul>
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function Products() {
             <span className={styles.tag} style={{ color: "#82E0D0", background: "rgba(130,224,208,0.08)", border: "1px solid rgba(130,224,208,0.2)" }}>HRM</span>
             <h2>PRIME HRM</h2>
             <p>
-              Prime HRM is an end-to-end human resource management solution built to simplify every stage of the employee lifecycle — from onboarding to exit.
+              Prime HRM is an end to end human resource management solution built to simplify every stage of the employee lifecycle from onboarding to exit.
             </p>
             <p>
               With powerful tools for payroll processing, attendance tracking, leave management, and performance reviews, Prime HRM gives HR teams everything they need in one place.
@@ -87,16 +87,16 @@ export default function Products() {
             <span className={styles.tag} style={{ color: "#38BDF8", background: "rgba(56,189,248,0.08)", border: "1px solid rgba(56,189,248,0.2)" }}>TRADER</span>
             <h2>PRIME Trader</h2>
             <p>
-              Prime Trader is a next-generation trading platform delivering real-time market data, smart order execution, and advanced analytics for retail and institutional traders.
+              Prime Trader is a next generation trading platform delivering real time market data, smart order execution, and advanced analytics for retail and institutional traders.
             </p>
             <p>
               Designed for speed and precision, Prime Trader gives users the tools to make informed decisions, manage risk, and execute trades with confidence across multiple asset classes.
             </p>
             <ul className={styles.featureList}>
-              <li>Real-time market data feeds</li>
+              <li>Real time market data feeds</li>
               <li>Smart order execution engine</li>
               <li>Advanced charting & analytics</li>
-              <li>Multi-asset class support</li>
+              <li>Multi asset class support</li>
             </ul>
           </div>
 
