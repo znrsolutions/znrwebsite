@@ -1,8 +1,58 @@
 import mysql from "mysql2/promise";
 
-export const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "znr_blog",
+const pool = mysql.createPool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 3306,
+  waitForConnections: true,
+  connectionLimit: 10,
 });
+
+async function initDB() {
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS admins (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      username VARCHAR(100),
+      password VARCHAR(255)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `);
+
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS blogs (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      title VARCHAR(255),
+      description TEXT,
+      image VARCHAR(255),
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      content LONGTEXT,
+      blocks LONGTEXT
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `);
+
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS jobs (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      title VARCHAR(255),
+      type VARCHAR(50),
+      location VARCHAR(100),
+      description TEXT,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `);
+
+  // Seed default admin if none exists
+  const [admins] = await pool.query("SELECT id FROM admins LIMIT 1");
+  if (admins.length === 0) {
+    await pool.query(
+      "INSERT INTO admins (username, password) VALUES (?, ?)",
+      ["admin", "123456"]
+    );
+  }
+}
+
+// Run once when the module is first imported
+initDB().catch((err) => console.error("DB init failed:", err));
+
+export const db = pool;
