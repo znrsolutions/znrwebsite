@@ -111,7 +111,7 @@ export default function Home() {
           <p className={styles.message}>
             We built ZNR to be part of that change. From seamless payment
             ecosystems to intelligent retail solutions, our approach is rooted
-            in innovation, scalability, and real-world impact. But as digital
+            in innovation, scalability, and real world impact. But as digital
             ecosystems evolve, so do the risks which is why cybersecurity is not
             an afterthought for us, but a core foundation of everything we
             design and deliver.
@@ -119,8 +119,8 @@ export default function Home() {
           <p className={styles.message}>
             In today’s interconnected world, businesses need more than just
             technology they need systems they can rely on. At ZNR, we focus on
-            building solutions that are not only high-performing but also
-            secure, compliant, and future-ready.
+            building solutions that are not only high performing but also
+            secure, compliant, and future ready.
           </p>
           <p className={styles.message}>
             Our mission is simple: to empower businesses with the tools,
@@ -182,7 +182,7 @@ export default function Home() {
               <div className={styles.overlay}>
                 <h3>Chain Reclaim</h3>
                 <p>
-                  Blockchain-based fund recovery service helping victims of
+                  Blockchain based fund recovery service helping victims of
                   crypto scams recover lost digital assets.
                 </p>
               </div>
@@ -362,7 +362,7 @@ export default function Home() {
               <div className={styles.overlay}>
                 <h3>PRIME HRM</h3>
                 <p>
-                  An end-to-end human resource management solution covering
+                  An end to end human resource management solution covering
                   employee onboarding, payroll, attendance, and performance
                   tracking.
                 </p>
@@ -425,7 +425,7 @@ export default function Home() {
               <div className={styles.overlay}>
                 <h3>PRIME Trader</h3>
                 <p>
-                  A next-generation trading platform delivering real-time market
+                  A next generation trading platform delivering real time market
                   data, smart order execution, and advanced analytics for retail
                   and institutional traders.
                 </p>

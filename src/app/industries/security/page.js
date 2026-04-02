@@ -93,7 +93,7 @@ export default function SecurityPage() {
           <div className={styles.actions}>
             <Link href="/tools/audit" className={styles.primaryBtn}>
               Get Security Audit
-            </Link>
+            </Link>  
 
             {/* <Link href="/tools/audit" className={styles.secondaryBtn}>
               Run Website Audit

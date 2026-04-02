@@ -10,7 +10,7 @@ export default function Retail() {
         </svg>
       ),
       title: "POS & Checkout Systems",
-      desc: "Seamless, fast, and reliable point-of-sale solutions that handle high transaction volumes with zero downtime.",
+      desc: "Seamless, fast, and reliable point of sale solutions that handle high transaction volumes with zero downtime.",
     },
     {
       color: "#3b82f6",
@@ -20,7 +20,7 @@ export default function Retail() {
         </svg>
       ),
       title: "E-Commerce Platforms",
-      desc: "Custom-built online storefronts with payment gateway integration, product management, and conversion optimization.",
+      desc: "Custom built online storefronts with payment gateway integration, product management, and conversion optimization.",
     },
     {
       color: "#f59e0b",
@@ -30,7 +30,7 @@ export default function Retail() {
         </svg>
       ),
       title: "Inventory Management",
-      desc: "Real-time stock tracking, automated reorder alerts, and multi-location inventory visibility across your entire operation.",
+      desc: "Real time stock tracking, automated reorder alerts, and multi location inventory visibility across your entire operation.",
     },
     {
       color: "#DB02DD",
@@ -60,7 +60,7 @@ export default function Retail() {
         </svg>
       ),
       title: "Omnichannel Experience",
-      desc: "Unified retail experiences across in-store, mobile, and online channels — keeping your brand consistent everywhere.",
+      desc: "Unified retail experiences across in store, mobile, and online channels keeping your brand consistent everywhere.",
     },
   ];
 
@@ -71,11 +71,11 @@ export default function Retail() {
     },
     {
       title: "Design the Solution",
-      desc: "Our team architects a tailored retail technology solution — from system design to UX — aligned with your brand and goals.",
+      desc: "Our team architects a tailored retail technology solution from system design to UX aligned with your brand and goals.",
     },
     {
       title: "Build & Integrate",
-      desc: "We develop and integrate your platform with existing tools — POS hardware, payment gateways, ERP systems, and more.",
+      desc: "We develop and integrate your platform with existing tools POS hardware, payment gateways, ERP systems, and more.",
     },
     {
       title: "Launch & Scale",
@@ -92,7 +92,7 @@ export default function Retail() {
           <span className={styles.eyebrow}>Retail & Commerce</span>
           <h1>Retail technology that <em>drives revenue</em></h1>
           <p>
-            From in-store POS to omnichannel e-commerce, ZNR builds the retail
+            From in store POS to omnichannel e-commerce, ZNR builds the retail
             infrastructure modern businesses need to sell smarter and grow faster.
           </p>
         </div>
@@ -115,7 +115,7 @@ export default function Retail() {
           <div className={styles.introRight}>
             <p>
               We help retail businesses create seamless omnichannel experiences.
-              From e-commerce platforms to in-store systems, our solutions ensure
+              From e-commerce platforms to in store systems, our solutions ensure
               consistent customer engagement across all touchpoints.
             </p>
             <p>
@@ -131,7 +131,7 @@ export default function Retail() {
         <div className={styles.sectionHeader}>
           <span className={styles.eyebrow}>Capabilities</span>
           <h2>Everything your retail business needs</h2>
-          <p>A full suite of retail technology services — built for scale.</p>
+          <p>A full suite of retail technology services built for scale.</p>
         </div>
 
         <div className={styles.grid}>

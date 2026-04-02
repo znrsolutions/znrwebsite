@@ -9,7 +9,7 @@ export default function Fintech() {
         </svg>
       ),
       title: "Payment Infrastructure",
-      desc: "End-to-end payment gateway development supporting multi-currency transactions, real-time settlement, and PCI-DSS compliance.",
+      desc: "End to end payment gateway development supporting multi currency transactions, real time settlement, and PCI-DSS compliance.",
       color: "#3b82f6",
     },
     {
@@ -19,7 +19,7 @@ export default function Fintech() {
         </svg>
       ),
       title: "Blockchain Solutions",
-      desc: "Decentralized applications, smart contracts, and blockchain integration for transparent, tamper-proof financial operations.",
+      desc: "Decentralized applications, smart contracts, and blockchain integration for transparent, tamper proof financial operations.",
       color: "#6366f1",
     },
     {
@@ -29,7 +29,7 @@ export default function Fintech() {
         </svg>
       ),
       title: "Trading Platforms",
-      desc: "High-frequency trading systems, real-time market data feeds, and order execution engines built for speed and precision.",
+      desc: "High frequency trading systems, real time market data feeds, and order execution engines built for speed and precision.",
       color: "#38BDF8",
     },
     {
@@ -69,7 +69,7 @@ export default function Fintech() {
         </svg>
       ),
       title: "Cloud & API Infrastructure",
-      desc: "Scalable cloud-native architectures and open banking APIs that connect financial ecosystems seamlessly.",
+      desc: "Scalable cloud native architectures and open banking APIs that connect financial ecosystems seamlessly.",
       color: "#6366f1",
     },
     {
@@ -79,7 +79,7 @@ export default function Fintech() {
         </svg>
       ),
       title: "Retail Payment Solutions",
-      desc: "POS integrations, buy-now-pay-later infrastructure, and omnichannel checkout experiences for modern retailers.",
+      desc: "POS integrations, buy now pay later infrastructure, and omnichannel checkout experiences for modern retailers.",
       color: "#ef4444",
     },
   ];
@@ -121,18 +121,18 @@ export default function Fintech() {
         <div className={styles.introContainer}>
           <div className={styles.introLeft}>
             <span className={styles.eyebrowDark}>What We Build</span>
-            <h2>Full-spectrum fintech engineering for the modern economy</h2>
+            <h2>Full spectrum fintech engineering for the modern economy</h2>
           </div>
           <div className={styles.introRight}>
             <p>
               ZNR Solutions combines deep financial domain knowledge with
-              cutting-edge engineering to build payment systems, trading
+              cutting edge engineering to build payment systems, trading
               platforms, and banking infrastructure that enterprises and
               startups trust.
             </p>
             <p>
               Whether you're launching a neobank, modernizing a legacy payment
-              system, or building a trading engine from scratch — our team
+              system, or building a trading engine from scratch our team
               brings the precision and security that financial technology demands.
             </p>
           </div>
@@ -144,7 +144,7 @@ export default function Fintech() {
         <div className={styles.sectionHeader}>
           <span className={styles.eyebrow}>Core Capabilities</span>
           <h2>What we specialise in</h2>
-          <p>A complete suite of fintech engineering services — from payments to compliance.</p>
+          <p>A complete suite of fintech engineering services from payments to compliance.</p>
         </div>
 
         <div className={styles.grid}>
@@ -168,7 +168,7 @@ export default function Fintech() {
           </div>
           <div className={styles.teamText}>
             <span className={styles.eyebrowDark}>Our Team</span>
-            <h2>Full-stack engineering built for finance</h2>
+            <h2>Full stack engineering built for finance</h2>
             <p>
               Our engineers combine expertise across frontend, backend, DevOps,
               and security to build financial systems that millions rely on.
@@ -176,9 +176,9 @@ export default function Fintech() {
               deliver with precision.
             </p>
             <ul className={styles.checkList}>
-              <li>Microservices & event-driven architecture</li>
+              <li>Microservices & event driven architecture</li>
               <li>Real-time data processing pipelines</li>
-              <li>Security-first engineering practices</li>
+              <li>Security first engineering practices</li>
               <li>High availability & disaster recovery</li>
             </ul>
           </div>
@@ -221,7 +221,7 @@ export default function Fintech() {
             <p>
               Building great financial technology starts with great people.
               Our HR function ensures we attract, retain, and develop top
-              engineering and financial talent — so your project is always
+              engineering and financial talent so your project is always
               in expert hands.
             </p>
             <ul className={styles.checkList}>

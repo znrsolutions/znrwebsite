@@ -26,7 +26,7 @@ export default function Solutions() {
         </svg>
       ),
       title: "Web Development",
-      desc: "Custom web applications and platforms built with modern frameworks — scalable, fast, and tailored to your business goals.",
+      desc: "Custom web applications and platforms built with modern frameworks scalable, fast, and tailored to your business goals.",
       details:
         "We build scalable web platforms using React, Next.js, and modern architectures. Includes admin panels, dashboards, APIs, and integrations.",
       color: "#3b82f6",
@@ -93,7 +93,7 @@ export default function Solutions() {
         </svg>
       ),
       title: "Retail Technology",
-      desc: "POS systems, inventory management, e-commerce platforms, and customer loyalty solutions for modern retailers.",
+      desc: "POS systems, inventory management, e commerce platforms, and customer loyalty solutions for modern retailers.",
       details:
         "We build scalable web platforms using React, Next.js, and modern architectures. Includes admin panels, dashboards, APIs, and integrations.",
       color: "#f59e0b",
@@ -114,7 +114,7 @@ export default function Solutions() {
         </svg>
       ),
       title: "CRM & HRM Platforms",
-      desc: "Custom-built or configured CRM and HRM systems that streamline sales pipelines, HR workflows, and team productivity.",
+      desc: "Custom built or configured CRM and HRM systems that streamline sales pipelines, HR workflows, and team productivity.",
       details:
         "We build scalable web platforms using React, Next.js, and modern architectures. Includes admin panels, dashboards, APIs, and integrations.",
       color: "#10b981",
@@ -160,7 +160,7 @@ export default function Solutions() {
         </svg>
       ),
       title: "Cloud & Infrastructure",
-      desc: "Cloud migration, DevOps pipelines, server management, and scalable infrastructure for high-availability systems.",
+      desc: "Cloud migration, DevOps pipelines, server management, and scalable infrastructure for high availability systems.",
       details:
         "We build scalable web platforms using React, Next.js, and modern architectures. Includes admin panels, dashboards, APIs, and integrations.",
       color: "#6366f1",
@@ -212,12 +212,12 @@ export default function Solutions() {
 
   const reasons = [
     {
-      title: "Finance-First Thinking",
+      title: "Finance First Thinking",
       desc: "Every solution we build is designed with financial compliance, data security, and transaction integrity at its core.",
     },
     {
-      title: "End-to-End Delivery",
-      desc: "From discovery and design to development, deployment, and ongoing support — we own the full lifecycle.",
+      title: "End to End Delivery",
+      desc: "From discovery and design to development, deployment, and ongoing support we own the full lifecycle.",
     },
     {
       title: "Retail & Commerce DNA",
@@ -225,7 +225,7 @@ export default function Solutions() {
     },
     {
       title: "Agile & Transparent",
-      desc: "Weekly sprints, real-time updates, and clear communication so you always know where your project stands.",
+      desc: "Weekly sprints, real time updates, and clear communication so you always know where your project stands.",
     },
   ];
 
@@ -241,7 +241,7 @@ export default function Solutions() {
         </h1>
         <p>
           ZNR is your trusted partner for fintech, retail technology, and
-          digital transformation — built to save you time, reduce costs, and
+          digital transformation built to save you time, reduce costs, and
           accelerate growth.
         </p>
       </div>
@@ -285,7 +285,7 @@ export default function Solutions() {
           <span className={styles.eyebrow}>Why ZNR</span>
           <h2>Built different, for a reason</h2>
           <p>
-            We don't just build software — we build systems that drive
+            We don't just build software we build systems that drive
             revenue, reduce risk, and scale with your ambitions.
           </p>
         </div>

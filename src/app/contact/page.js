@@ -145,7 +145,7 @@ export default function Contact() {
             <h2>Get in touch with us!</h2>
 
             <p>
-              Whether you want to extend your in-house team or need assistance with
+              Whether you want to extend your in house team or need assistance with
               development, quality assurance or support, we can help.
             </p>
           </div>
