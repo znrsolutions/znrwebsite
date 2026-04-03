@@ -17,6 +17,7 @@ export const navLinks = [
     children: [
       { name: "Blog", href: "/resources/blog" },
       // { name: "Case Studies", href: "/resources/case-studies" }
+     { name: "Careers", href: "/resources/careers" }
     ]
   }
 ];

@@ -5,6 +5,32 @@
   justify-content: center;
   background: radial-gradient(circle at top, #eef2ff, #f8fafc);
 
+
+  .passwordWrapper {
+  position: relative;
+
+  input {
+    width: 100%;
+    padding-right: 60px;
+  }
+}
+
+.show {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 12px;
+  color: #1710d8;
+}
+
+.error {
+  color: #ef4444;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
   .card {
     width: 100%;
     max-width: 420px;

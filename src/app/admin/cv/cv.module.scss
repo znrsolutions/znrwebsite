@@ -1,0 +1,103 @@
+.cvPage {
+  padding: 130px;
+
+  h1 {
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 800;
+  }
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* CARD */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+
+  min-height: 220px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+  }
+
+  h3 {
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+}
+
+/* 🔥 LIMIT MESSAGE HEIGHT */
+.card p:nth-of-type(2) {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;   /* show only 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* DATE */
+.date {
+  font-size: 12px;
+  color: #999;
+  margin-top: 10px;
+}
+
+/* BUTTON */
+.download {
+  margin-top: 14px;
+  align-self: flex-start;
+
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+
+  background: linear-gradient(135deg, #1710d8, #4338ca);
+  box-shadow: 0 8px 20px rgba(23, 16, 216, 0.3);
+
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(23, 16, 216, 0.4);
+  }
+}
+
+.message {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+/* 🔥 EXPAND ON HOVER */
+.card:hover .message {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}

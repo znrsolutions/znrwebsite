@@ -1,0 +1,395 @@
+@use "../../../styles/variables.scss" as *;
+@use "../../../styles/mixins.scss" as *;
+
+/* ================= HERO ================= */
+.hero {
+  padding: 160px 20px 60px;
+  background: #f5f5f5;
+}
+
+.heroTop {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: $black;
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 15px;
+    color: $gray-600;
+  }
+}
+
+.heroBtn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  background: $primary;
+  color: $white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.heroImage {
+  max-width: 1100px;
+  margin: auto;
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+
+/* ================= GROWTH ================= */
+.growth {
+  padding: 80px 20px;
+  background: #f5f5f5;
+}
+
+.growthContainer {
+  max-width: 1100px;
+  margin: auto;
+
+  h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  p {
+    font-size: 15px;
+    color: $gray-600;
+    line-height: 1.7;
+  }
+}
+
+/* ================= BENEFITS ================= */
+.benefits {
+  padding: 60px 20px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+}
+
+.grid {
+  max-width: 1000px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.card {
+  background: $white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* ================= JOIN ================= */
+.join {
+  padding: 80px 20px;
+  background: #f5f5f5;
+}
+
+.joinContainer {
+  max-width: 1100px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.left {
+  h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 15px;
+    color: $gray-600;
+    line-height: 1.7;
+    margin-bottom: 15px;
+  }
+}
+
+.right img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* ================= JOBS (🔥 NEW DESIGN) ================= */
+.jobs {
+  padding: 100px 20px;
+  background: #f8fafc;
+  text-align: center;
+
+  h2 {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 50px;
+  }
+}
+
+.jobsGrid {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+.jobCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: $white;
+  padding: 25px 30px;
+  border-radius: 18px;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  transition: 0.3s;
+
+  text-align: left;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta {
+  display: flex;
+  gap: 10px;
+}
+
+.badge {
+  background: $primary;
+  color: $white;
+  padding: 4px 12px;
+  font-size: 12px;
+  border-radius: 999px;
+}
+
+.badgeOutline {
+  border: 1px solid #cbd5f5;
+  color: #4338ca;
+  padding: 4px 12px;
+  font-size: 12px;
+  border-radius: 999px;
+}
+
+.applyBtn {
+  background: linear-gradient(135deg, #1710d8, #4338ca);
+  color: $white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* ================= CTA ================= */
+.cta {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f8fafc;
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #64748b;
+    margin-bottom: 25px;
+  }
+}
+
+.cvForm {
+  max-width: 500px;
+  margin: auto;
+  display: grid;
+  gap: 12px;
+
+  input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+  }
+
+  button {
+    background: linear-gradient(135deg, #1710d8, #4338ca);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  resize: none;
+  font-family: inherit;
+}
+}
+
+
+/* ================= TRUST ================= */
+.trust {
+  padding: 80px 20px;
+  background: #f5f5f5;
+}
+
+.trustContainer {
+  max-width: 1100px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.image img {
+  width: 260px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 300px 0 300px 300px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.content {
+  text-align: center;
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 15px;
+    color: $gray-600;
+    line-height: 1.7;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@include respond("laptop") {
+
+  .heroTop h1 {
+    font-size: get-vw(64px);
+  }
+
+  .growthContainer h2 {
+    font-size: get-vw(48px);
+  }
+
+  .content {
+    flex-direction: row;
+
+    p {
+      width: 50%;
+    }
+  }
+
+  .joinContainer {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .left {
+    width: 45%;
+  }
+
+  .right {
+    width: 55%;
+  }
+
+  .jobs h2 {
+    font-size: get-vw(48px);
+  }
+
+  .jobsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: get-vw(30px);
+  }
+
+  .jobCard {
+    padding: get-vw(30px);
+  }
+
+  .trustContainer {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .image {
+    width: 45%;
+  }
+
+  .content {
+    width: 55%;
+    text-align: left;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .jobCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .applyBtn {
+    width: 100%;
+  }
+}
+

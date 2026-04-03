@@ -99,6 +99,7 @@ export default function Navbar() {
       <span>Resources</span>
       <Link href="/resources/blog">Blog</Link> 
       {/* <Link href="/resources/case-studies">Case Studies</Link> */}
+     <Link href="/careers">Careers</Link> {/* ✅ ADD */}
     </div>
 
   </div>
