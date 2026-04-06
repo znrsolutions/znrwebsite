@@ -411,7 +411,7 @@ const editBlog = (blog) => {
         <div className={styles.grid}>
           {blogs.map((b) => (
             <div key={b.id} className={styles.card}>
-              {b.image && <img src={b.image} alt={b.title} />}
+              {b.image && <img src={b.image} alt={`${b.title} - ZNR blog on fintech, retail and cybersecurity`} />}
 
               <h3>{b.title}</h3>
               <p>{b.description}</p>

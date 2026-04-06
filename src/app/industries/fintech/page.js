@@ -1,4 +1,5 @@
 import styles from "./fintech.module.scss";
+import Head from "next/head";
 
 export default function Fintech() {
   const capabilities = [
@@ -92,18 +93,74 @@ export default function Fintech() {
   ];
 
   return (
+  <>
+    <Head>
+      <title>Fintech Solutions | Payment Systems, Trading & Banking Platforms</title>
+
+      <meta
+        name="description"
+        content="ZNR Solutions builds fintech platforms including payment systems, trading platforms, digital banking, and financial infrastructure."
+      />
+
+      <meta
+        name="keywords"
+        content="fintech solutions, payment gateway development, trading platforms, digital banking, financial software"
+      />
+
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://znrsolutions.com/fintech" />
+
+      {/* OPEN GRAPH */}
+      <meta property="og:title" content="Fintech Solutions | ZNR Solutions" />
+      <meta
+        property="og:description"
+        content="Build secure fintech platforms including payments, trading, and banking systems."
+      />
+      <meta property="og:url" content="https://znrsolutions.com/fintech" />
+      <meta property="og:image" content="/og-image.png" />
+
+      {/* TWITTER */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Fintech Solutions | ZNR Solutions" />
+      <meta
+        name="twitter:description"
+        content="Secure fintech platforms for modern financial systems."
+      />
+      <meta name="twitter:image" content="/og-image.png" />
+
+      {/* STRUCTURED DATA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FinancialService",
+            name: "ZNR Fintech Solutions",
+            provider: {
+              "@type": "Organization",
+              name: "ZNR Solutions",
+            },
+          }),
+        }}
+      />
+    </Head>
+
     <main className={styles.fintech}>
 
       {/* HERO */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <span className={styles.eyebrow}>Financial Technologies</span>
-          <h1>Engineering the Future of <em>Finance</em></h1>
-          <p>
+          <h1>Fintech Solutions for Payment <em>Systems,Trading & Digital Banking</em></h1>
+          <p className={styles.heroSub2}>
+  ZNR Solutions builds fintech platforms including payment gateways, trading systems,
+  digital banking, blockchain solutions, and financial infrastructure.
+</p>
+          {/* <p>
             Leverage elite engineering expertise trusted by businesses worldwide
             to build financial systems that are secure, scalable, and built for
             the demands of modern commerce.
-          </p>
+          </p> */}
         </div>
 
         <div className={styles.statsRow}>
@@ -164,7 +221,7 @@ export default function Fintech() {
       <section className={styles.teamSection}>
         <div className={styles.teamRow}>
           <div className={styles.teamImage}>
-            <img src="/fintech1.png" alt="Engineering Team" />
+            <img src="/fintech1.png" alt="Fintech engineering team building payment and trading platforms" />
           </div>
           <div className={styles.teamText}>
             <span className={styles.eyebrowDark}>Our Team</span>
@@ -233,7 +290,16 @@ export default function Fintech() {
           </div>
         </div>
       </section>
+<div className={styles.links}>
+  <a href="/solutions" className={styles.linkItem}>
+    Explore Our Services →
+  </a>
 
+  <a href="/products" className={styles.linkItem}>
+    View Our Products →
+  </a>
+</div>
     </main>
+    </>
   );
 }

@@ -2,6 +2,8 @@
 
 import styles from "./solutions.module.scss";
 import { useState } from "react";
+import Head from "next/head";
+
 
 
 export default function Solutions() {
@@ -93,7 +95,7 @@ export default function Solutions() {
         </svg>
       ),
       title: "Retail Technology",
-      desc: "POS systems, inventory management, e commerce platforms, and customer loyalty solutions for modern retailers.",
+      desc: "POS systems, inventory management, e-commerce platforms, and customer loyalty solutions for modern retailers.",
       details:
         "We build scalable web platforms using React, Next.js, and modern architectures. Includes admin panels, dashboards, APIs, and integrations.",
       color: "#f59e0b",
@@ -230,22 +232,76 @@ export default function Solutions() {
   ];
 
   return (
-  <main className={styles.solutions}>
+  <>
+    <Head>
+      <title>ZNR Solutions Services | Web, Fintech & Cybersecurity</title>
+
+      <meta
+        name="description"
+        content="ZNR Solutions provides web development, fintech systems, retail technology, cybersecurity, and IT consulting services."
+      />
+
+      <meta
+        name="keywords"
+        content="web development, fintech solutions, retail software, cybersecurity services, IT consulting Sri Lanka"
+      />
+
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://znrsolutions.com/solutions" />
+
+      <meta property="og:title" content="ZNR Solutions Services" />
+      <meta property="og:description" content="Explore fintech, retail, and cybersecurity services." />
+      <meta property="og:url" content="https://znrsolutions.com/solutions" />
+      <meta property="og:image" content="/og-image.png" />
+
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ZNR Solutions Services" />
+  <meta
+    name="twitter:description"
+    content="Web, fintech, and cybersecurity services for modern businesses."
+  />
+  <meta name="twitter:image" content="/og-image.png" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            serviceType: "IT Services",
+            provider: {
+              "@type": "Organization",
+              name: "ZNR Solutions",
+            },
+          }),
+        }}
+      />
+    </Head>
+
+    <main className={styles.solutions}>
     
     {/* HERO */}
-    <section className={styles.hero}>
-      <div className={styles.heroContent}>
-        <span className={styles.eyebrow}>Services & Solutions</span>
-        <h1>
-          Technology that <em>Powers</em> Your Business
-        </h1>
-        <p>
-          ZNR is your trusted partner for fintech, retail technology, and
-          digital transformation built to save you time, reduce costs, and
-          accelerate growth.
-        </p>
-      </div>
-    </section>
+<section className={styles.hero}>
+  <div className={styles.heroContent}>
+    <span className={styles.eyebrow}>Services & Solutions</span>
+
+    <h1>
+      Web Development, Fintech & <em>Cybersecurity Solutions for Modern Businesses</em>
+    </h1>
+
+    {/* <p>
+      ZNR is your trusted partner for fintech, retail technology, and
+      digital transformation built to save you time, reduce costs, and
+      accelerate growth.
+    </p> */}
+
+    {/* ✅ ADD HERE */}
+    <p className={styles.heroSub2}>
+  ZNR Solutions offers web development, fintech platforms, cybersecurity,
+  cloud infrastructure, and IT consulting services for modern businesses.
+</p>
+  </div>
+</section>
 
     {/* SERVICES GRID */}
     <section className={styles.servicesSection}>
@@ -345,6 +401,22 @@ export default function Solutions() {
       </div>
     )}
 
+
+
+{/* ✅ ADD INTERNAL LINKS HERE */}
+<div className={styles.links}>
+  <a href="/products" className={styles.linkItem}>
+    Explore Our Products →
+  </a>
+
+  <a href="/industries" className={styles.linkItem}>
+    Industries We Serve →
+  </a>
+</div>
+
+
   </main>
+
+  </>
 );
 }

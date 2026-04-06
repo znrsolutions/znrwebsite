@@ -1,6 +1,9 @@
 "use client";
 import toast from "react-hot-toast";
 
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import styles from "./contact.module.scss";
 
@@ -118,7 +121,56 @@ export default function Contact() {
   setLoading(false);
 };
 
-  return (
+return (
+  <>
+    <Head>
+      <title>Contact ZNR Solutions | Fintech, Retail & Software Services</title>
+
+      <meta
+        name="description"
+        content="Contact ZNR Solutions for fintech systems, retail software, cybersecurity, and digital transformation services."
+      />
+
+      <meta
+        name="keywords"
+        content="contact ZNR Solutions, IT services Sri Lanka, fintech development, software company contact"
+      />
+
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://znrsolutions.com/contact" />
+
+      {/* OPEN GRAPH */}
+      <meta property="og:title" content="Contact ZNR Solutions" />
+      <meta
+        property="og:description"
+        content="Get in touch with ZNR Solutions for fintech, retail, and software services."
+      />
+      <meta property="og:url" content="https://znrsolutions.com/contact" />
+      <meta property="og:image" content="/og-image.png" />
+
+      {/* TWITTER */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Contact ZNR Solutions" />
+      <meta
+        name="twitter:description"
+        content="Reach out to ZNR Solutions for IT services and software development."
+      />
+      <meta name="twitter:image" content="/og-image.png" />
+
+      {/* STRUCTURED DATA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            name: "Contact ZNR Solutions",
+            url: "https://znrsolutions.com/contact",
+          }),
+        }}
+      />
+    </Head>
+
     <main className={styles.contactPage}>
 
       {/* HERO */}
@@ -126,14 +178,23 @@ export default function Contact() {
         <div className={styles.top}>
           <h1>Contact us</h1>
 
-          <p>
-            Interested in working with us? Let us know your expectations and specific needs.
-            Reach out today, and let’s explore how we can collaborate effectively!
-          </p>
+<h2 style={{ display: "none" }}>
+  Contact ZNR Solutions for Fintech, Retail & Software Services
+</h2>
+
+         <p className={styles.heroSub2}>
+  Get in touch with ZNR Solutions for fintech platforms, retail systems,
+  cybersecurity services, and custom software development.
+</p>
         </div>
 
         <div className={styles.image}>
-          <img src="/contact.jpg" alt="Contact" />
+          <Image
+  src="/contact.jpg"
+  alt="Contact ZNR Solutions team"
+  width={1200}
+  height={400}
+/>
         </div>
       </section>
 
@@ -274,7 +335,16 @@ export default function Contact() {
 
         </div>
       </section>
+<div className={styles.links}>
+  <Link href="/solutions" className={styles.linkItem}>
+    Explore Our Services →
+  </Link>
 
+  <Link href="/blog" className={styles.linkItem}>
+    Read Our Blog →
+  </Link>
+</div>
     </main>
+    </>
   );
 }

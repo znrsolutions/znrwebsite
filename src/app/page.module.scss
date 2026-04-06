@@ -1,7 +1,157 @@
 @use "../styles/variables.scss" as *;
 @use "../styles/mixins.scss" as *;
 
+/* ================= WHY SECTION ================= */
+.why {
+  padding: 80px 20px;
+  background: #f9fafb;
+}
 
+.whyContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: $black;
+    margin-bottom: 20px;
+  }
+}
+
+.whyText {
+  font-size: 15px;
+  color: $gray-600;
+  line-height: 1.8;
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.whyItem {
+  background: $white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 14px;
+  color: $gray-700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.25s;
+
+  &::before {
+    content: "✓";
+    color: #3b82f6;
+    font-weight: 600;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* ================= DESKTOP ================= */
+@include respond("laptop") {
+  .whyContainer h2 {
+    font-size: get-vw(42px);
+  }
+
+  .whyText {
+    font-size: get-vw(16px);
+  }
+
+  .whyGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: get-vw(20px);
+  }
+
+  .whyItem {
+    font-size: get-vw(15px);
+    padding: get-vw(16px);
+    border-radius: get-vw(12px);
+  }
+}
+
+
+/* ================= FAQ ================= */
+.faq {
+  padding: 80px 20px;
+  background: #ffffff;
+}
+
+.faqContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: $black;
+    margin-bottom: 40px;
+  }
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faqItem {
+  background: $white;
+  border-radius: 12px;
+  padding: 18px 20px;
+  text-align: left;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: 0.25s;
+
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: $black;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 14px;
+    color: $gray-600;
+    line-height: 1.7;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* ================= DESKTOP ================= */
+@include respond("laptop") {
+  .faqContainer h2 {
+    font-size: get-vw(42px);
+  }
+
+  .faqItem {
+    padding: get-vw(20px) get-vw(24px);
+
+    h3 {
+      font-size: get-vw(18px);
+    }
+
+    p {
+      font-size: get-vw(15px);
+    }
+  }
+}
 
 
 /* PAGE WRAPPER */

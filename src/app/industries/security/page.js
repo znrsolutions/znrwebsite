@@ -1,10 +1,49 @@
 import Link from "next/link";
 import styles from "./security.module.scss";
 
+
 export const metadata = {
   title: "Web Security Services | ZNR Solutions",
   description:
-    "Protect your website from XSS, SQL injection, WordPress downtime, and cyber threats with ZNR Solutions.",
+    "Protect your website from XSS, SQL injection, malware, and downtime. ZNR Solutions provides cybersecurity, website protection, and vulnerability fixes.",
+
+  keywords: [
+    "web security services",
+    "cybersecurity solutions",
+    "XSS protection",
+    "SQL injection prevention",
+    "website malware removal",
+    "WordPress security",
+  ],
+
+  openGraph: {
+    title: "Web Security Services | ZNR Solutions",
+    description:
+      "Protect your website from cyber threats, downtime, and vulnerabilities.",
+    url: "https://znrsolutions.com/security",
+    siteName: "ZNR Solutions",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Security Services | ZNR Solutions",
+    description:
+      "Secure your website against XSS, SQL injection, and malware attacks.",
+    images: ["/og-image.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 const threats = [
@@ -76,19 +115,41 @@ const steps = [
 export default function SecurityPage() {
   return (
     <main className={styles.securityPage}>
+        {/* ✅ ADD STRUCTURED DATA HERE */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            serviceType: "Web Security",
+            provider: {
+              "@type": "Organization",
+              name: "ZNR Solutions",
+            },
+          }),
+        }}
+      />
       {/* HERO */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <span className={styles.kicker}>Web Security</span>
 
-          <h1>
+<h1>
+  Web Security & Cybersecurity Services to <em>Protect Your Website from Attacks & Downtime</em>
+</h1>
+          {/* <h1>
             Protect your website from <em>attacks & downtime</em>
-          </h1>
-
-          <p>
+          </h1> */}
+<p className={styles.heroSub2}>
+  ZNR Solutions provides web security services including XSS protection,
+  SQL injection prevention, malware removal, WordPress security, and
+  website uptime protection.
+</p>
+          {/* <p>
             ZNR Solutions helps businesses secure websites against XSS, SQL
             injection, malware, and unexpected downtime.
-          </p>
+          </p> */}
 
           <div className={styles.actions}>
             <Link href="/tools/audit" className={styles.primaryBtn}>
@@ -163,6 +224,16 @@ export default function SecurityPage() {
           Contact ZNR
         </Link>
       </section>
+
+      <div className={styles.links}>
+  <Link href="/solutions" className={styles.linkItem}>
+    Explore Our Services →
+  </Link>
+
+  <Link href="/fintech" className={styles.linkItem}>
+    Fintech Security Solutions →
+  </Link>
+</div>
     </main>
   );
 }
