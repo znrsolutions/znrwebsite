@@ -170,7 +170,84 @@
     background-position: 200% 0;
   }
 }
+/* ================= FAQ ================= */
+.faq {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 40px 30px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+  text-align: left;
 
+  h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 40px;
+  }
+}
+
+/* FAQ ITEM */
+.faq h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1710d8;
+  margin-top: 20px;
+  position: relative;
+  padding-left: 28px;
+}
+
+/* ICON DOT */
+.faq h3::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #1710d8;
+  font-size: 22px;
+}
+
+/* ANSWER TEXT */
+.faq p {
+  margin-top: 8px;
+  margin-left: 28px;
+  color: #475569;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* DIVIDER */
+.faq h3:not(:first-of-type) {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 20px;
+}
+
+/* HOVER EFFECT (SUBTLE) */
+.faq h3:hover {
+  color: #4338ca;
+  transition: 0.2s;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .faq {
+    padding: 30px 20px;
+
+    h2 {
+      font-size: 22px;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+}
 /* ================= CTA ================= */
 .cta {
   margin-top: 90px;

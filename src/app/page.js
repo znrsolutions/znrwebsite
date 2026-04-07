@@ -130,11 +130,7 @@ export default function Home() {
               Transforming payments · Reshaping finance · Reimagining retail
             </p>
 
-            {/* ✅ ADD THIS HERE */}
-            <p className={styles.sub2}>
-              ZNR Solutions provides fintech solutions, retail software systems,
-              and cybersecurity services for modern businesses.
-            </p>
+           
 
             <div className={styles.scrollArrow}>
               <svg
