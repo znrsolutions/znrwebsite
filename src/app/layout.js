@@ -2,6 +2,7 @@ import "./../styles/globals.scss";
 import Navbar from "../components/layout/Navbar/Navbar";
 import Footer from "../components/layout/Footer/Footer";
 import ChatWidget from "../components/ChatWidget/ChatWidget";
+import IPBadge from "@/components/IPBadge/IPBadge"; // ✅ NEW
 import { Toaster } from "react-hot-toast";
 
 /* ================= SEO METADATA ================= */
@@ -64,12 +65,15 @@ export default function RootLayout({ children }) {
       <head>
         {/* ✅ FAVICON */}
         <link rel="icon" href="/favicon.ico" />
-          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
         {/* ✅ THEME COLOR */}
         <meta name="theme-color" content="#1710D8" />
-         <link rel="canonical" href="https://znrsolutions.com" />
-        {/* 🔥 GOOGLE FONTS OPTIMIZED */}
+
+        {/* ⚠️ REMOVE GLOBAL CANONICAL (IMPORTANT) */}
+        {/* ❌ DO NOT KEEP GLOBAL CANONICAL HERE */}
+
+        {/* 🔥 GOOGLE FONTS */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -81,7 +85,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
 
-        {/* 🔥 STRUCTURED DATA (SEO BOOST) */}
+        {/* 🔥 STRUCTURED DATA */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -118,6 +122,9 @@ export default function RootLayout({ children }) {
 
         {/* 🔥 CHAT WIDGET */}
         <ChatWidget />
+
+        {/* 🔥 IP BADGE (BOTTOM LEFT) */}
+        {/* <IPBadge /> */}
 
         {/* 🔥 TOAST */}
         <Toaster

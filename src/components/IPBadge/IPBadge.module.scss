@@ -1,0 +1,55 @@
+.ipBadge {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  background: rgba(23, 16, 216, 0.9);
+  backdrop-filter: blur(12px);
+
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+  z-index: 999;
+
+  pointer-events: none;
+
+  img {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+
+  span {
+    font-size: 12px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .ipBadge {
+    bottom: 15px;
+    left: 15px;
+    padding: 8px 12px;
+  }
+
+  .text span {
+    font-size: 11px;
+  }
+}
