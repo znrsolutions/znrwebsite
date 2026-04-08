@@ -1,7 +1,22 @@
 @use "../../../styles/variables.scss" as *;
 @use "../../../styles/mixins.scss" as *;
 
+.active {
+  color: #1710d8;
+  font-weight: 600;
+  position: relative;
+}
 
+.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #1710d8;
+  border-radius: 2px;
+}
 
 .header {
     width: 100%;
