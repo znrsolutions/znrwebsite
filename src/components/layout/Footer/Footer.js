@@ -37,7 +37,7 @@ export default function Footer() {
         <div className={styles.column}>
           <h4>Company</h4>
           <Link href="/">Home</Link>
-          <Link href="/about">About Us</Link>
+          <Link href="/about">About</Link>
           <Link href="/solutions">Solutions</Link>
           <Link href="/products">Products</Link>
           <Link href="/industries">Industries</Link>

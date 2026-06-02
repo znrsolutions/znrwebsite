@@ -108,7 +108,7 @@ export default function About() {
 
             {/* RIGHT CONTENT */}
             <div className={styles.content}>
-              <h2>The Beginning</h2>
+              <h2>Company Vision</h2>
 
               <p>
                 ZNR Tech was founded on the straightforward but impactful
@@ -125,7 +125,7 @@ export default function About() {
               </p>
 
 
-<div className={styles.buttons}>
+{/* <div className={styles.buttons}>
   <Link href="/solutions" className={styles.primary}>
     Our Services
   </Link>
@@ -133,21 +133,21 @@ export default function About() {
   <Link href="/careers" className={styles.secondary}>
     Life at ZNR
   </Link>
-</div>
+</div> */}
             </div>
           </div>
         </section>
 
         {/* MISSION SECTION (SINGLE IMAGE) */}
-        <section className={styles.missionSingle}>
-          <div className={styles.container}>
+        {/* <section className={styles.missionSingle}>
+          <div className={styles.container}> */}
             {/* LEFT IMAGE */}
-            <div className={styles.image}>
+            {/* <div className={styles.image}>
               <img src="/about8.png" alt="Mission" />
-            </div>
+            </div> */}
 
             {/* RIGHT CONTENT */}
-            <div className={styles.content}>
+            {/* <div className={styles.content}>
               <h2>Mission</h2>
 
               <p>
@@ -166,27 +166,29 @@ export default function About() {
               <p>We construct growth supporting systems.</p>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* GLOBAL SECTION */}
         <section className={styles.global}>
           <div className={styles.container}>
             {/* LEFT CONTENT */}
             <div className={styles.content}>
-              <h2>We are global</h2>
+              <h2>Company Mission</h2>
 
-              <p>
-                ZNR Tech works with companies looking for a long term tech
-                partner rather than just a vendor, startups transforming ideas
-                into products ready for the market, manufacturers and service
-                providers optimising operations, and SMEs looking to
-                professionalise and scale.
+             <p>
+                Our goal at ZNR Tech is to maximise impact while simplifying
+                technology for businesses.
               </p>
 
               <p>
-                While we adjust to different industries, our standards remain
-                constant.
+                We work to close the gap between vision and execution by fusing
+                technical know how, strategic thinking, and proactive
+                communication to produce dependable, scalable, and quick
+                solutions.
               </p>
+
+              <p>We do more than just construct projects.</p>
+              <p>We construct growth supporting systems.</p>
             </div>
 
             {/* RIGHT IMAGES */}
@@ -196,6 +198,43 @@ export default function About() {
             </div>
           </div>
         </section>
+
+
+<section className={styles.team}>
+  <div className={styles.teamContainer}>
+    <h2>Our Team</h2>
+
+    <div className={styles.teamGrid}>
+      {[
+        {
+          img: "/founder.jpg",
+          title: "Strategic Thinkers",
+          text: "Our team blends business strategy, technology and design to create digital solutions that deliver real impact.",
+        },
+        {
+          img: "/founder.jpg",
+          title: "Creative Builders",
+          text: "We design and develop modern platforms with performance, usability and scalability at the center.",
+        },
+        {
+          img: "/founder.jpg",
+          title: "Growth Partners",
+          text: "From planning to launch, we work closely with clients to support long-term growth and digital transformation.",
+        },
+      ].map((item, index) => (
+        <div className={styles.teamCard} key={index}>
+          <img src={item.img} alt={item.title} />
+
+          <div className={styles.teamContent}>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
         {/* CULTURE STATEMENT */}
         <section className={styles.culture}>

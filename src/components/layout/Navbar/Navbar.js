@@ -124,7 +124,7 @@ export default function Navbar() {
             href="/products"
             className={pathname === "/products" ? styles.active : ""}
           >
-            Products
+            Our Work
           </Link>
 
           <Link

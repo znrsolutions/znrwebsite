@@ -1,5 +1,5 @@
 export const navLinks = [
-  { name: "Products", href: "/products" },
+  { name: "Our Work", href: "/products" },
   { name: "Solutions", href: "/solutions" },
 
   {
@@ -8,16 +8,24 @@ export const navLinks = [
       { name: "Fintech", href: "/industries/fintech" },
       { name: "Retail", href: "/industries/retail" },
       { name: "Security", href: "/industries/security" },
-      
     ]
   },
 
   {
-    name: "Resources",
-    children: [
-      { name: "Blog", href: "/resources/blog" },
-      // { name: "Case Studies", href: "/resources/case-studies" }
-     { name: "Careers", href: "/resources/careers" }
-    ]
-  }
+    name: "About",
+    href: "/about"
+  },
+
+  // NEW TOP LEVEL CAREERS
+  {
+    name: "Careers",
+    href: "/resources/careers"
+  },
+
+  // {
+  //   name: "Resources",
+  //   children: [
+  //     { name: "Blog", href: "/resources/blog" }
+  //   ]
+  // }
 ];

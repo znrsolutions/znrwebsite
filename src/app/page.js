@@ -53,7 +53,7 @@ export default function Home() {
         <title>ZNR Solutions | Fintech, Retail & Cybersecurity</title>
 
         <link rel="icon" href="/favicon.ico" />
-          <meta name="theme-color" content="#1710D8" />
+        <meta name="theme-color" content="#1710D8" />
 
         <meta
           name="description"
@@ -108,48 +108,24 @@ export default function Home() {
       <main className={styles.home}>
         {/* HERO */}
         <section className={styles.hero}>
-          <div className={styles.overlay}></div>
-          <div className={styles.vignette}></div>
-          <div className={styles.accent}></div>
+          <video className={styles.heroVideo} autoPlay muted loop playsInline>
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
 
-          <div className={styles.container}>
-            {/* <p className={styles.staticText}>We are</p> */}
+          <div className={styles.heroShade}></div>
 
+          <div className={styles.heroContent}>
             <h1>
-              <span className={styles.typed}>{displayText}</span>
-              <span className={styles.cursor}>|</span>
+              <span className={styles.lineOne}>Making experiences</span>
+
+              <strong className={styles.lineTwo}>
+                better with technology.
+              </strong>
             </h1>
-
-
-            {/* SEO hidden heading */}
-           {/* <h2 className={styles.heroSeo}>
-             Fintech, Retail & Cybersecurity Solutions for Modern Businesses
-               </h2> */}
-
-            <p className={styles.sub}>
-              Transforming payments · Reshaping finance · Reimagining retail
-            </p>
-
-           
-
-            <div className={styles.scrollArrow}>
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="rgba(255,255,255,0.6)"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 5v14M5 12l7 7 7-7" />
-              </svg>
-            </div>
           </div>
         </section>
 
-        <section className={styles.about}>
+        {/* <section className={styles.about}>
           <div className={styles.wrapper}>
             <span className={styles.eyebrow}>Founder's Message</span>
 
@@ -203,151 +179,137 @@ export default function Home() {
             <p className={styles.founderName}>Amman Lantra</p>
             <p className={styles.founderTitle}>Founder & CEO, ZNR Solutions</p>
           </div>
-        </section>
+        </section> */}
 
         <section className={styles.projects}>
-          <div className={styles.container}>
-            <h2>Our Clients</h2>
+          <div className={styles.workContainer}>
+            <h2>Our Work</h2>
 
-            <div className={styles.grid}>
-              <div className={styles.card}>
-                <img
-                  src="/p1.png"
-                  alt="Evolute consulting platform Sri Lanka fintech solutions"
-                />
-                <div className={styles.overlay}>
-                  <h3>Evolute</h3>
-                  <p>
-                    Evolute is a business consulting and outsourcing solutions
-                    provider based in Sri Lanka helping organizations improve
-                    operational efficiency.
-                  </p>
-                </div>
-                <a
-                  href="https://evolute.lk"
-                  target="_blank"
-                   rel="noopener noreferrer"
-                  className={styles.link}
+            <div className={styles.workList}>
+              {[
+                {
+                  title: "Agera Capital ",
+                  link: "https://ageracapitalgroup.com/",
+                },
+                {
+                  title: "Prime CRM",
+                  link: "https://crm.znrsolutions.com/",
+                },
+                {
+                  title: "Chain Reclaim",
+                  link: "https://chainreclaim.com",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className={`${styles.workRow} ${
+                    index % 2 === 1 ? styles.reverse : ""
+                  }`}
                 >
-                  <span>→</span>
-                </a>
-              </div>
+                  <div className={styles.workPreview}>
+                    <div className={styles.browserTop}>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <p>{item.link}</p>
+                    </div>
 
-              <div className={styles.card}>
-                <img src="/p2.png" alt="MR Events event management system" />
-                <div className={styles.overlay}>
-                  <h3>Mr Events</h3>
-                  <p>
-                    MR Events is an event management platform that showcases
-                    services for corporate events, product launches, and
-                    concerts.
-                  </p>
-                </div>
-                <a
-                  href="https://mr-events.net/"
-                  target="_blank"
-                   rel="noopener noreferrer"
-                  className={styles.link}
-                >
-                  <span>→</span>
-                </a>
-              </div>
+                    <div className={styles.previewFrame}>
+                      <iframe
+                        src={item.link}
+                        title={item.title}
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
 
-              <div className={styles.card}>
-                <img src="/p3.png" alt="Blockchain crypto recovery platform" />
-                <div className={styles.overlay}>
-                  <h3>Chain Reclaim</h3>
-                  <p>
-                    Blockchain based fund recovery service helping victims of
-                    crypto scams recover lost digital assets.
-                  </p>
-                </div>
-                <a
-                  href="https://chainreclaim.com"
-                  target="_blank"
-                   rel="noopener noreferrer"
-                  className={styles.link}
-                >
-                  <span>→</span>
-                </a>
-              </div>
+                  <div className={styles.workContent}>
+                    <h3>{item.title}</h3>
 
-              <div className={styles.card}>
-                <img src="/p4.png" alt="Restaurant booking system software" />
-                <div className={styles.overlay}>
-                  <h3>Book My Tables</h3>
-                  <p>
-                    Online restaurant booking platform helping businesses manage
-                    reservations and customers book tables easily.
-                  </p>
-                </div>
-                <a
-                  href="https://www.bookmytables.co.uk/"
-                  target="_blank"
-                   rel="noopener noreferrer"
-                  className={styles.link}
-                >
-                  <span>→</span>
-                </a>
-              </div>
+                    <p>
+                      If you have concerns about how your personal information
+                      is handled, please contact us at tech@znrsolutions.com
+                      with the details of your complaint. We will review and
+                      investigate your concern to ensure the proper procedures
+                      have been followed.
+                    </p>
 
-              <div className={styles.card}>
-                <img
-                  src="/p5.png"
-                  alt="Business consulting digital solutions platform"
-                />
-                <div className={styles.overlay}>
-                  <h3>Minerva</h3>
-                  <p>
-                    Business consulting and digital solutions platform improving
-                    operational efficiency and sustainable growth.
-                  </p>
+                    <p>
+                      We aim to complete investigations within 15 working days
+                      of receiving your complaint. In some cases, the process
+                      may take longer.
+                    </p>
+                  </div>
                 </div>
-                <a
-                  href="https://min-erva.com/"
-                  target="_blank"
-                   rel="noopener noreferrer"
-                  className={styles.link}
-                >
-                  <span>→</span>
-                </a>
-              </div>
+              ))}
             </div>
+
+            <a href="/products" className={styles.viewMoreBtn}>
+              View More
+            </a>
           </div>
         </section>
 
         {/* 🔥 TRUST / AUTHORITY SECTION */}
-<section className={styles.why}>
-  <div className={styles.whyContainer}>
-    <h2>Why Choose ZNR Solutions</h2>
+        <section className={styles.why}>
+          <div className={styles.whyContainer}>
+            <h2>Way of Working</h2>
 
-    <p className={styles.whyText}>
-      We specialize in fintech systems, retail platforms, and cybersecurity
-      solutions with a strong focus on performance, scalability, and security.
-      Our solutions are built to handle real-world challenges, ensuring
-      reliability, compliance, and long-term growth for modern businesses.
-    </p>
+            <p className={styles.whyText}>
+              We specialize in fintech systems, retail platforms, and
+              cybersecurity solutions with a strong focus on performance,
+              scalability, and security. Our solutions are built to handle
+              real-world challenges, ensuring reliability, compliance, and
+              long-term growth for modern businesses.
+            </p>
 
-    <div className={styles.whyGrid}>
-      <div className={styles.whyItem}>Secure & scalable architecture</div>
-      <div className={styles.whyItem}>Fintech & payment system expertise</div>
-      <div className={styles.whyItem}>Retail and enterprise solutions</div>
-      <div className={styles.whyItem}>Fast delivery & ongoing support</div>
+<div className={styles.processTimeline}>
+  {[
+    {
+      title: "Understand Business Objectives",
+      desc: "Align technology initiatives with business goals and long-term vision.",
+    },
+    {
+      title: "Market & Competitor Analysis",
+      desc: "Evaluate industry trends, competitors and market opportunities.",
+    },
+    {
+      title: "User Centered Thinking",
+      desc: "Focus on customer needs, usability and exceptional user experiences.",
+    },
+    {
+      title: "Compliance & Quality",
+      desc: "Ensure security, regulatory compliance and quality assurance standards.",
+    },
+    {
+      title: "Go to Market Strategy",
+      desc: "Plan launch, adoption, growth and ongoing optimization strategies.",
+    },
+  ].map((item, index) => (
+    <div className={styles.processItem} key={index}>
+      <div className={styles.processNumber}>
+        {String(index + 1).padStart(2, "0")}
+      </div>
+
+      <h3>{item.title}</h3>
+      <p>{item.desc}</p>
     </div>
-  </div>
-</section>
+  ))}
+</div>
+          </div>
+        </section>
 
-        <section className={styles.cta}>
+        {/* <section className={styles.cta}>
           <div className={styles.glowLeft}></div>
           <div className={styles.glowRight}></div>
           <div className={styles.gridLines}></div>
 
-          <div className={styles.ctaContainer}>
+          <div className={styles.ctaContainer}> */}
             {/* <div className={styles.eyebrow}>
             <span className={styles.dot}></span>
             <span>Let's Work Togetsher</span>
           </div> */}
-
+{/* 
             <h2>
               Ready to <em>revolutionize</em>
               <br />
@@ -389,30 +351,29 @@ export default function Home() {
               <Link href="/industries">Industries We Serve</Link>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section className={styles.projects}>
+        {/* <section className={styles.projects}>
           <div className={styles.container}>
             <h2>Built with Purpose</h2>
 
-            <div className={styles.gridProducts}>
+            <div className={styles.gridProducts}> */}
               {/* PRIME CRM */}
-              <div className={styles.card}>
+              {/* <div className={styles.card}>
                 <div className={styles.logoWrap}>
-                   <div style={{ maxWidth: "100%", overflow: "hidden" }}>
-                  <svg
-                    width="132"
-                    height="18"
-                    viewBox="0 0 132 18"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    
-                    <path
-                      d="M13.368 5.664C13.368 6.688 13.128 7.624 12.648 8.472C12.184 9.304 11.472 9.976 10.512 10.488C9.56801 10.984 8.40801 11.232 7.03201 11.232H4.70401V16.944H5.90086e-06V0.0239992H7.03201C8.39201 0.0239992 9.54401 0.263999 10.488 0.744C11.448 1.224 12.168 1.888 12.648 2.736C13.128 3.584 13.368 4.56 13.368 5.664ZM6.57601 7.488C7.90401 7.488 8.56801 6.88 8.56801 5.664C8.56801 4.432 7.90401 3.816 6.57601 3.816H4.70401V7.488H6.57601ZM23.8258 16.944L20.4658 10.704H19.9618V16.944H15.2578V0.0239992H22.6738C24.0338 0.0239992 25.1858 0.263999 26.1298 0.744C27.0738 1.208 27.7858 1.856 28.2658 2.688C28.7458 3.504 28.9858 4.424 28.9858 5.448C28.9858 6.6 28.6658 7.616 28.0258 8.496C27.4018 9.36 26.4818 9.976 25.2658 10.344L29.0818 16.944H23.8258ZM19.9618 7.488H22.2898C22.9298 7.488 23.4098 7.336 23.7298 7.032C24.0498 6.728 24.2098 6.288 24.2098 5.712C24.2098 5.168 24.0418 4.744 23.7058 4.44C23.3858 4.12 22.9138 3.96 22.2898 3.96H19.9618V7.488ZM35.829 0.0239992V16.944H31.125V0.0239992H35.829ZM58.2598 0.0239992V16.944H53.5558V7.608L50.3638 16.944H46.4278L43.2118 7.536V16.944H38.5078V0.0239992H44.1958L48.4438 11.016L52.5958 0.0239992H58.2598ZM65.6415 3.792V6.552H71.0415V10.128H65.6415V13.176H71.7615V16.944H60.9375V0.0239992H71.7615V3.792H65.6415ZM80.1724 8.568C80.1724 6.936 80.5404 5.472 81.2764 4.176C82.0124 2.864 83.0124 1.84 84.2764 1.104C85.5564 0.368 86.9724 -4.76837e-07 88.5244 -4.76837e-07C90.3484 -4.76837e-07 91.9404 0.44 93.3004 1.32C94.6604 2.2 95.6524 3.448 96.2764 5.064H93.6604C93.1964 4.056 92.5244 3.28 91.6444 2.736C90.7804 2.192 89.7404 1.92 88.5244 1.92C87.3564 1.92 86.3084 2.192 85.3804 2.736C84.4524 3.28 83.7244 4.056 83.1964 5.064C82.6684 6.056 82.4044 7.224 82.4044 8.568C82.4044 9.896 82.6684 11.064 83.1964 12.072C83.7244 13.064 84.4524 13.832 85.3804 14.376C86.3084 14.92 87.3564 15.192 88.5244 15.192C89.7404 15.192 90.7804 14.928 91.6444 14.4C92.5244 13.856 93.1964 13.08 93.6604 12.072H96.2764C95.6524 13.672 94.6604 14.912 93.3004 15.792C91.9404 16.656 90.3484 17.088 88.5244 17.088C86.9724 17.088 85.5564 16.728 84.2764 16.008C83.0124 15.272 82.0124 14.256 81.2764 12.96C80.5404 11.664 80.1724 10.2 80.1724 8.568ZM108.335 16.944L104.351 10.104H101.711V16.944H99.5274V0.216H104.927C106.191 0.216 107.255 0.432 108.119 0.864C108.999 1.296 109.655 1.88 110.087 2.616C110.519 3.352 110.735 4.192 110.735 5.136C110.735 6.288 110.399 7.304 109.727 8.184C109.071 9.064 108.079 9.648 106.751 9.936L110.951 16.944H108.335ZM101.711 8.352H104.927C106.111 8.352 106.999 8.064 107.591 7.488C108.183 6.896 108.479 6.112 108.479 5.136C108.479 4.144 108.183 3.376 107.591 2.832C107.015 2.288 106.127 2.016 104.927 2.016H101.711V8.352ZM131.097 0.335999V16.944H128.913V4.56L123.393 16.944H121.857L116.313 4.536V16.944H114.129V0.335999H116.481L122.625 14.064L128.769 0.335999H131.097Z"
-                      fill="#DB02DD"
-                    />
-                  </svg>
+                  <div style={{ maxWidth: "100%", overflow: "hidden" }}>
+                    <svg
+                      width="132"
+                      height="18"
+                      viewBox="0 0 132 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.368 5.664C13.368 6.688 13.128 7.624 12.648 8.472C12.184 9.304 11.472 9.976 10.512 10.488C9.56801 10.984 8.40801 11.232 7.03201 11.232H4.70401V16.944H5.90086e-06V0.0239992H7.03201C8.39201 0.0239992 9.54401 0.263999 10.488 0.744C11.448 1.224 12.168 1.888 12.648 2.736C13.128 3.584 13.368 4.56 13.368 5.664ZM6.57601 7.488C7.90401 7.488 8.56801 6.88 8.56801 5.664C8.56801 4.432 7.90401 3.816 6.57601 3.816H4.70401V7.488H6.57601ZM23.8258 16.944L20.4658 10.704H19.9618V16.944H15.2578V0.0239992H22.6738C24.0338 0.0239992 25.1858 0.263999 26.1298 0.744C27.0738 1.208 27.7858 1.856 28.2658 2.688C28.7458 3.504 28.9858 4.424 28.9858 5.448C28.9858 6.6 28.6658 7.616 28.0258 8.496C27.4018 9.36 26.4818 9.976 25.2658 10.344L29.0818 16.944H23.8258ZM19.9618 7.488H22.2898C22.9298 7.488 23.4098 7.336 23.7298 7.032C24.0498 6.728 24.2098 6.288 24.2098 5.712C24.2098 5.168 24.0418 4.744 23.7058 4.44C23.3858 4.12 22.9138 3.96 22.2898 3.96H19.9618V7.488ZM35.829 0.0239992V16.944H31.125V0.0239992H35.829ZM58.2598 0.0239992V16.944H53.5558V7.608L50.3638 16.944H46.4278L43.2118 7.536V16.944H38.5078V0.0239992H44.1958L48.4438 11.016L52.5958 0.0239992H58.2598ZM65.6415 3.792V6.552H71.0415V10.128H65.6415V13.176H71.7615V16.944H60.9375V0.0239992H71.7615V3.792H65.6415ZM80.1724 8.568C80.1724 6.936 80.5404 5.472 81.2764 4.176C82.0124 2.864 83.0124 1.84 84.2764 1.104C85.5564 0.368 86.9724 -4.76837e-07 88.5244 -4.76837e-07C90.3484 -4.76837e-07 91.9404 0.44 93.3004 1.32C94.6604 2.2 95.6524 3.448 96.2764 5.064H93.6604C93.1964 4.056 92.5244 3.28 91.6444 2.736C90.7804 2.192 89.7404 1.92 88.5244 1.92C87.3564 1.92 86.3084 2.192 85.3804 2.736C84.4524 3.28 83.7244 4.056 83.1964 5.064C82.6684 6.056 82.4044 7.224 82.4044 8.568C82.4044 9.896 82.6684 11.064 83.1964 12.072C83.7244 13.064 84.4524 13.832 85.3804 14.376C86.3084 14.92 87.3564 15.192 88.5244 15.192C89.7404 15.192 90.7804 14.928 91.6444 14.4C92.5244 13.856 93.1964 13.08 93.6604 12.072H96.2764C95.6524 13.672 94.6604 14.912 93.3004 15.792C91.9404 16.656 90.3484 17.088 88.5244 17.088C86.9724 17.088 85.5564 16.728 84.2764 16.008C83.0124 15.272 82.0124 14.256 81.2764 12.96C80.5404 11.664 80.1724 10.2 80.1724 8.568ZM108.335 16.944L104.351 10.104H101.711V16.944H99.5274V0.216H104.927C106.191 0.216 107.255 0.432 108.119 0.864C108.999 1.296 109.655 1.88 110.087 2.616C110.519 3.352 110.735 4.192 110.735 5.136C110.735 6.288 110.399 7.304 109.727 8.184C109.071 9.064 108.079 9.648 106.751 9.936L110.951 16.944H108.335ZM101.711 8.352H104.927C106.111 8.352 106.999 8.064 107.591 7.488C108.183 6.896 108.479 6.112 108.479 5.136C108.479 4.144 108.183 3.376 107.591 2.832C107.015 2.288 106.127 2.016 104.927 2.016H101.711V8.352ZM131.097 0.335999V16.944H128.913V4.56L123.393 16.944H121.857L116.313 4.536V16.944H114.129V0.335999H116.481L122.625 14.064L128.769 0.335999H131.097Z"
+                        fill="#DB02DD"
+                      />
+                    </svg>
                   </div>
                   <span className={styles.productTag}>CRM</span>
                 </div>
@@ -423,14 +384,14 @@ export default function Home() {
                     to help businesses streamline sales pipelines, manage
                     contacts, and drive revenue growth.
                   </p>
-                </div>
+                </div> */}
                 {/* <a href="" target="_blank" className={styles.link}>
                 <span>→</span>
               </a> */}
-              </div>
+              {/* </div> */}
 
               {/* PRIME HRM */}
-              <div className={styles.card}>
+              {/* <div className={styles.card}>
                 <div
                   className={styles.logoWrap}
                   style={{ background: "#0f1a16" }}
@@ -478,14 +439,14 @@ export default function Home() {
                     employee onboarding, payroll, attendance, and performance
                     tracking.
                   </p>
-                </div>
+                </div> */}
                 {/* <a href="" target="_blank" className={styles.link}>
                 <span>→</span>
               </a> */}
-              </div>
+              {/* </div> */}
 
               {/* PRIME TRADER */}
-              <div className={styles.card}>
+              {/* <div className={styles.card}>
                 <div
                   className={styles.logoWrap}
                   style={{ background: "#0f1520" }}
@@ -541,16 +502,43 @@ export default function Home() {
                     market data, smart order execution, and advanced analytics
                     for retail and institutional traders.
                   </p>
-                </div>
+                </div> */}
                 {/* <a href="" target="_blank" className={styles.link}>
              <span>→</span>
                 </a> */}
-              </div>
+              {/* </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section className={styles.blog}>
+
+
+
+<section className={styles.latest}>
+  <div className={styles.latestContainer}>
+    <h2 className={styles.latestTitle}>Our strong partners</h2>
+
+    <p>
+      Our partnerships with trusted technology providers help us deliver
+        secure, scalable and future ready digital solutions for modern businesses.
+    </p>
+
+    <div className={styles.latestGrid}>
+      {[
+        "/partners/google.png",
+        "/partners/aws.svg",
+        "/partners/microsoft.svg",
+        "/partners/salesforce.png",
+        "/partners/cloudflare.png",
+      ].map((img, index) => (
+        <div className={styles.latestCard} key={index}>
+          <img src={img} alt="Latest update" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+        {/* <section className={styles.blog}>
           <div className={styles.container}>
             <h2>
               The latest from <br />
@@ -635,49 +623,51 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* 🔥 FAQ SECTION */}
-<section className={styles.faq}>
-  <div className={styles.faqContainer}>
-    <h2>Frequently Asked Questions</h2>
+        {/* <section className={styles.faq}>
+          <div className={styles.faqContainer}>
+            <h2>Frequently Asked Questions</h2>
 
-    <div className={styles.faqList}>
-      <div className={styles.faqItem}>
-        <h3>What services does ZNR Solutions provide?</h3>
-        <p>
-          We provide fintech solutions, retail software systems, and
-          cybersecurity services designed for modern businesses and digital
-          transformation.
-        </p>
-      </div>
+            <div className={styles.faqList}>
+              <div className={styles.faqItem}>
+                <h3>What services does ZNR Solutions provide?</h3>
+                <p>
+                  We provide fintech solutions, retail software systems, and
+                  cybersecurity services designed for modern businesses and
+                  digital transformation.
+                </p>
+              </div>
 
-      <div className={styles.faqItem}>
-        <h3>Do you build payment systems?</h3>
-        <p>
-          Yes, we build scalable, secure, and high-performance payment
-          infrastructures tailored for businesses and financial platforms.
-        </p>
-      </div>
+              <div className={styles.faqItem}>
+                <h3>Do you build payment systems?</h3>
+                <p>
+                  Yes, we build scalable, secure, and high-performance payment
+                  infrastructures tailored for businesses and financial
+                  platforms.
+                </p>
+              </div>
 
-      <div className={styles.faqItem}>
-        <h3>Do you offer cybersecurity services?</h3>
-        <p>
-          Yes, we design secure systems and protect applications against
-          threats such as data breaches, vulnerabilities, and cyber attacks.
-        </p>
-      </div>
+              <div className={styles.faqItem}>
+                <h3>Do you offer cybersecurity services?</h3>
+                <p>
+                  Yes, we design secure systems and protect applications against
+                  threats such as data breaches, vulnerabilities, and cyber
+                  attacks.
+                </p>
+              </div>
 
-      <div className={styles.faqItem}>
-        <h3>Which industries do you serve?</h3>
-        <p>
-          We serve fintech, retail, and enterprise sectors by delivering
-          scalable and secure digital solutions.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+              <div className={styles.faqItem}>
+                <h3>Which industries do you serve?</h3>
+                <p>
+                  We serve fintech, retail, and enterprise sectors by delivering
+                  scalable and secure digital solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section> */}
       </main>
     </>
   );
