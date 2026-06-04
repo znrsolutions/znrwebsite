@@ -207,16 +207,15 @@
 }
 
 
-
-/* ================= LATEST / PARTNERS STYLE SECTION ================= */
+/* ================= LATEST / PARTNERS SECTION ================= */
 
 .latest {
-  padding: 90px 20px;
+  padding: 100px 20px;
   background: #f8fafc;
 }
 
 .latestContainer {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   text-align: center;
 }
@@ -231,7 +230,7 @@
 
 .latestText {
   max-width: 950px;
-  margin: 0 auto 60px;
+  margin: 0 auto 100px;
   font-size: 18px;
   line-height: 1.8;
   color: #475569;
@@ -239,100 +238,79 @@
 
 .latestGrid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 18px;
+  align-items: center;
+
+  margin-top: 20px;
 }
 
 .latestCard {
-  height: 180px;
-  border-radius: 24px;
+  height: 140px;
+
+  border-radius: 22px;
   background: #ffffff;
+
   border: 1px solid rgba(15, 23, 42, 0.06);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 30px;
+  padding: 22px;
   overflow: hidden;
 
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 
   img {
     width: 100%;
-    max-width: 140px;
-    max-height: 70px;
+    max-width: 115px;
+    max-height: 58px;
     object-fit: contain;
+    transition: transform 0.3s ease;
   }
 
   &:hover {
     transform: translateY(-6px);
+
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-  }
-}
-
-/* TABLET */
-
-@media (max-width: 992px) {
-  .latestGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-  .latest {
-    padding: 70px 18px;
-  }
-
-  .latestTitle {
-    font-size: 36px;
-  }
-
-  .latestText {
-    font-size: 14px;
-    margin-bottom: 40px;
-  }
-
-  .latestGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-
-  .latestCard {
-    height: 125px;
-    border-radius: 18px;
-    padding: 24px;
 
     img {
-      max-width: 100px;
-      max-height: 50px;
+      transform: scale(1.05);
     }
   }
 }
 
-/* SMALL MOBILE */
+/* LARGE LAPTOP */
 
-@media (max-width: 480px) {
+@media (max-width: 1400px) {
   .latestGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(5, 1fr);
   }
+}
 
-  .latestCard {
-    height: 120px;
+/* LAPTOP */
+
+@media (max-width: 1200px) {
+  .latestGrid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 /* TABLET */
 
 @media (max-width: 992px) {
+  .latest {
+    padding: 90px 20px;
+  }
+
   .latestGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .latestCard {
-    height: 280px;
+    height: 130px;
   }
 }
 
@@ -345,11 +323,13 @@
 
   .latestTitle {
     font-size: 34px;
+    margin-bottom: 18px;
   }
 
   .latestText {
     font-size: 14px;
-    margin-bottom: 40px;
+    line-height: 1.7;
+    margin-bottom: 50px;
   }
 
   .latestGrid {
@@ -358,8 +338,14 @@
   }
 
   .latestCard {
-    height: 180px;
-    border-radius: 16px;
+    height: 120px;
+    border-radius: 18px;
+    padding: 20px;
+
+    img {
+      max-width: 90px;
+      max-height: 45px;
+    }
   }
 }
 
@@ -367,14 +353,20 @@
 
 @media (max-width: 480px) {
   .latestGrid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
   .latestCard {
-    height: 150px;
+    height: 100px;
+    padding: 16px;
+
+    img {
+      max-width: 75px;
+      max-height: 40px;
+    }
   }
 }
-
 
 
 /* ================= FAQ ================= */
@@ -547,6 +539,83 @@
 }
 
 
+.scrollCue {
+  position: absolute;
+  left: 7.5vw;
+  bottom: 42px;
+  z-index: 4;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  span {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
+.scrollLine {
+  width: 90px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.28);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40%;
+
+    width: 40%;
+    height: 100%;
+
+    background: #ffffff;
+
+    animation: scrollLineMove 1.8s ease-in-out infinite;
+  }
+}
+
+@keyframes scrollLineMove {
+  0% {
+    left: -40%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    padding-left: 24px;
+
+    h1 {
+      span {
+        font-size: 42px;
+      }
+
+      strong {
+        font-size: 46px;
+      }
+    }
+  }
+
+  .scrollCue {
+    left: 24px;
+    bottom: 32px;
+  }
+
+  .scrollLine {
+    width: 64px;
+  }
+}
+
 /* ================= ABOUT ================= */
 .about {
   padding: 80px 20px;
@@ -709,9 +778,11 @@
   height: 520px;
   border-radius: 22px;
   overflow: hidden;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+  display: block;
+  background: #f8fafc;
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.12);
+
+  
 }
 
 .browserTop {

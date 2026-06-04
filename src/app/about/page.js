@@ -111,17 +111,11 @@ export default function About() {
               <h2>Company Vision</h2>
 
               <p>
-                ZNR Tech was founded on the straightforward but impactful
-                observation that great ideas don’t work when they are
-                implemented slowly or unclearly.
+                Build fintech solutions that simplify life with software solutions powered by Blockchain and traditional payment gateways.
               </p>
 
               <p>
-                What began as a targeted web and digital solutions project
-                swiftly developed into a comprehensive tech partner for
-                startups, SMEs, and expanding businesses. Our objective was
-                clear from the start: eliminate complexity, bridge communication
-                gaps, and provide technology that genuinely advances businesses.
+           
               </p>
 
 
@@ -176,19 +170,15 @@ export default function About() {
               <h2>Company Mission</h2>
 
              <p>
-                Our goal at ZNR Tech is to maximise impact while simplifying
-                technology for businesses.
+                At ZNR, we focus on building the next generation of fintech solutions, breaking the limitations created by traditional payment methods.
               </p>
 
               <p>
-                We work to close the gap between vision and execution by fusing
-                technical know how, strategic thinking, and proactive
-                communication to produce dependable, scalable, and quick
-                solutions.
+                We're working with a mission of leading fintech solutions. Leading fintech solutions making the future of the fintech space transparent.
               </p>
 
-              <p>We do more than just construct projects.</p>
-              <p>We construct growth supporting systems.</p>
+              {/* <p>We do more than just construct projects.</p>
+              <p>We construct growth supporting systems.</p> */}
             </div>
 
             {/* RIGHT IMAGES */}
@@ -208,18 +198,28 @@ export default function About() {
       {[
         {
           img: "/founder.jpg",
-          title: "Strategic Thinkers",
-          text: "Our team blends business strategy, technology and design to create digital solutions that deliver real impact.",
+          title: "Amman Lantra",
+          text: "Chief Executive Officer",
         },
         {
-          img: "/founder.jpg",
-          title: "Creative Builders",
-          text: "We design and develop modern platforms with performance, usability and scalability at the center.",
+          img: "/azni.png",
+          title: "Siddique Azni",
+          text: "Chief Operations Officer",
         },
         {
-          img: "/founder.jpg",
-          title: "Growth Partners",
-          text: "From planning to launch, we work closely with clients to support long-term growth and digital transformation.",
+          img: "/azeez.png",
+          title: "Azeez Sanoon",
+          text: "Chief Financial Officer",
+        },
+        {
+          img: "/sumar.png",
+          title: "Sumar Fawaz",
+          text: "Chief Technology Officer",
+        },
+        {
+          img: "/mustafa.png",
+          title: "Mustafa Asif",
+          text: "Senior Business Analyst",
         },
       ].map((item, index) => (
         <div className={styles.teamCard} key={index}>

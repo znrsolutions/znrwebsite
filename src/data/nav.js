@@ -3,13 +3,14 @@ export const navLinks = [
   { name: "Solutions", href: "/solutions" },
 
   {
-    name: "Industries",
-    children: [
-      { name: "Fintech", href: "/industries/fintech" },
-      { name: "Retail", href: "/industries/retail" },
-      { name: "Security", href: "/industries/security" },
-    ]
-  },
+  name: "Industries",
+  children: [
+    { name: "Fintech", href: "/industries/fintech" },
+    { name: "Retail", href: "/industries/retail" },
+    { name: "Security", href: "/industries/security" },
+    { name: "BPO", href: "/industries/bpo" },
+  ]
+},
 
   {
     name: "About",

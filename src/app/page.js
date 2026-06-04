@@ -108,22 +108,27 @@ export default function Home() {
       <main className={styles.home}>
         {/* HERO */}
         <section className={styles.hero}>
-          <video className={styles.heroVideo} autoPlay muted loop playsInline>
-            <source src="/hero-video.mp4" type="video/mp4" />
-          </video>
+  <video className={styles.heroVideo} autoPlay muted loop playsInline>
+    <source src="/hero-video.mp4" type="video/mp4" />
+  </video>
 
-          <div className={styles.heroShade}></div>
+  <div className={styles.heroShade}></div>
 
-          <div className={styles.heroContent}>
-            <h1>
-              <span className={styles.lineOne}>Making experiences</span>
+  <div className={styles.heroContent}>
+    <h1>
+      <span className={styles.lineOne}>Pushing limits,</span>
 
-              <strong className={styles.lineTwo}>
-                better with technology.
-              </strong>
-            </h1>
-          </div>
-        </section>
+      <strong className={styles.lineTwo}>
+        driving Innovation forward.
+      </strong>
+    </h1>
+  </div>
+
+  <div className={styles.scrollCue}>
+    <span>Scroll</span>
+    <div className={styles.scrollLine}></div>
+  </div>
+</section>
 
         {/* <section className={styles.about}>
           <div className={styles.wrapper}>
@@ -186,20 +191,32 @@ export default function Home() {
             <h2>Our Work</h2>
 
             <div className={styles.workList}>
-              {[
-                {
-                  title: "Agera Capital ",
-                  link: "https://ageracapitalgroup.com/",
-                },
-                {
-                  title: "Prime CRM",
-                  link: "https://crm.znrsolutions.com/",
-                },
-                {
-                  title: "Chain Reclaim",
-                  link: "https://chainreclaim.com",
-                },
-              ].map((item, index) => (
+             {[
+  {
+    title: "Agera Capital Group",
+    link: "https://ageracapitalgroup.com/",
+    description:
+      "Serving across multiple time zones for traders who can start trading with a browser, breaking the dependency on a mobile app.Supporting multiple languages with partner programs to start marketing money, custodial accounts, admin and agent access segregated by management."
+  },
+  {
+    title: "Prime CRM",
+    link: "https://crm.znrsolutions.com/",
+    description:
+      "Realtime call monitoring, reporting, browser calling, user hierarchy and lead imports with previous communication and history.Segregate your operations into multiple teams with efficient management and monitoring."
+  },
+  {
+    title: "PRIME HRM",
+    link: "https://ats.znrsolutions.com/",
+    description:
+      "Manage your employees with our smart HRM, from hiring to payroll, with KPI monitoring to make the right decisions to retain the best performers. Easy migration from existing Excel sheets or software for smart ATS. For a smart approach to cluster best talents based on keywords. Removing the hustle of interview stages with pipelines with just drag and drop."
+  },
+  {
+    title: "Shinrai Wallet",
+    link: "https://www.shinraiwallet.com",
+    description:
+      "Built on the Ethereum network for lower gas fees and efficiency. Create custodial wallets with full access that can be integrated to a platform, game or receive payments with a link.You can make your client deposit or withdraw without any limitations from 1 USDT to 10,000 USDT with no minimum or maximum transaction limitation."
+  }
+].map((item, index) => (
                 <div
                   key={index}
                   className={`${styles.workRow} ${
@@ -223,23 +240,20 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className={styles.workContent}>
-                    <h3>{item.title}</h3>
+         <div className={styles.workContent}>
+  <h3>{item.title}</h3>
 
-                    <p>
-                      If you have concerns about how your personal information
-                      is handled, please contact us at tech@znrsolutions.com
-                      with the details of your complaint. We will review and
-                      investigate your concern to ensure the proper procedures
-                      have been followed.
-                    </p>
+  <p>{item.description}</p>
 
-                    <p>
-                      We aim to complete investigations within 15 working days
-                      of receiving your complaint. In some cases, the process
-                      may take longer.
-                    </p>
-                  </div>
+  <a
+    href={item.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.projectBtn}
+  >
+    Visit Website →
+  </a>
+</div>
                 </div>
               ))}
             </div>
@@ -527,9 +541,11 @@ export default function Home() {
       {[
         "/partners/google.png",
         "/partners/aws.svg",
-        "/partners/microsoft.svg",
+        "/partners/alchemy-logo.svg",
+        "/partners/microsoft_azure.png",
+        "/partners/contabo.png",
         "/partners/salesforce.png",
-        "/partners/cloudflare.png",
+        "/partners/pega.png",
       ].map((img, index) => (
         <div className={styles.latestCard} key={index}>
           <img src={img} alt="Latest update" />
@@ -538,6 +554,8 @@ export default function Home() {
     </div>
   </div>
 </section>
+
+
         {/* <section className={styles.blog}>
           <div className={styles.container}>
             <h2>

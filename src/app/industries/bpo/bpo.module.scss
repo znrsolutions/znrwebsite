@@ -1,0 +1,221 @@
+.bpoPage {
+  width: 100%;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.hero {
+  position: relative;
+  min-height: 85vh;
+  padding: 140px 20px 90px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(rgba(5, 8, 20, 0.6), rgba(5, 8, 20, 0.6)),
+    url("/bpo-hero.jpg") center/cover no-repeat;
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+
+  span {
+    color: #93c5fd;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 22px 0;
+    color: #ffffff;
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -2px;
+  }
+
+  p {
+    max-width: 760px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 18px;
+    line-height: 1.8;
+  }
+}
+
+.services,
+.process {
+  padding: 100px 20px;
+}
+
+.sectionHeader {
+  max-width: 850px;
+  margin: 0 auto 60px;
+  text-align: center;
+
+  h2 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 18px;
+  }
+
+  p {
+    color: #64748b;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+}
+
+.serviceGrid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.serviceCard {
+  padding: 34px;
+  border-radius: 24px;
+  background: #f8fafc;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  transition: 0.3s ease;
+
+  span {
+    display: inline-flex;
+    color: #1710d8;
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 26px;
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: #0f172a;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #64748b;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    background: #ffffff;
+    box-shadow: 0 24px 55px rgba(15, 23, 42, 0.1);
+  }
+}
+
+.process {
+  background: #f8fafc;
+}
+
+.processGrid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  position: relative;
+}
+
+.processItem {
+  text-align: center;
+
+  div {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    background: #1710d8;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.4;
+  }
+}
+
+.cta {
+  padding: 100px 20px;
+  text-align: center;
+  background: #0f172a;
+
+  h2 {
+    color: #ffffff;
+    font-size: clamp(34px, 5vw, 56px);
+    font-weight: 800;
+    margin-bottom: 18px;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 17px;
+    margin-bottom: 36px;
+  }
+
+  a {
+    display: inline-flex;
+    padding: 16px 36px;
+    border-radius: 999px;
+    background: #1710d8;
+    color: #ffffff;
+    font-weight: 800;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .serviceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .processGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 75vh;
+    padding: 120px 18px 70px;
+  }
+
+  .heroContent {
+    h1 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+
+  .services,
+  .process,
+  .cta {
+    padding: 70px 18px;
+  }
+
+  .serviceGrid,
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+}
