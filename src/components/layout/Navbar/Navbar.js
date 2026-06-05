@@ -110,112 +110,46 @@ export default function Navbar() {
           <button onClick={() => setOpen(false)}>✕</button>
         </div>
 
-        {/* LINKS */}
-        <div className={styles.mobileLinks}>
-          
+    {/* LINKS */}
+<div className={styles.mobileLinks}>
+  {navLinks.map((item, index) => {
+    const isActive = item.href && pathname === item.href;
+
+    const isParentActive =
+      item.children &&
+      item.children.some((sub) => pathname.startsWith(sub.href));
+
+    return (
+      <div key={index} className={styles.mobileGroup}>
+        {item.href ? (
           <Link
-            href="/"
-            className={pathname === "/" ? styles.active : ""}
+            href={item.href}
+            onClick={() => setOpen(false)}
+            className={isActive ? styles.active : ""}
           >
-            Home
+            {item.name}
           </Link>
+        ) : (
+          <span className={isParentActive ? styles.active : ""}>
+            {item.name}
+          </span>
+        )}
 
-          <Link
-            href="/products"
-            className={pathname === "/products" ? styles.active : ""}
-          >
-            Our Work
-          </Link>
-
-          <Link
-            href="/solutions"
-            className={pathname === "/solutions" ? styles.active : ""}
-          >
-            Solutions
-          </Link>
-
-          {/* INDUSTRIES */}
-          <div className={styles.mobileGroup}>
-            <span
-              className={
-                pathname.startsWith("/industries")
-                  ? styles.active
-                  : ""
-              }
-            >
-              Industries
-            </span>
-
+        {item.children &&
+          item.children.map((sub, i) => (
             <Link
-              href="/industries/fintech"
-              className={
-                pathname === "/industries/fintech"
-                  ? styles.active
-                  : ""
-              }
+              key={i}
+              href={sub.href}
+              onClick={() => setOpen(false)}
+              className={pathname === sub.href ? styles.active : ""}
             >
-              Fintech
+              {sub.name}
             </Link>
-
-            <Link
-              href="/industries/retail"
-              className={
-                pathname === "/industries/retail"
-                  ? styles.active
-                  : ""
-              }
-            >
-              Retail
-            </Link>
-
-            <Link
-              href="/industries/security"
-              className={
-                pathname === "/industries/security"
-                  ? styles.active
-                  : ""
-              }
-            >
-              Security
-            </Link>
-          </div>
-
-          {/* RESOURCES */}
-          <div className={styles.mobileGroup}>
-            <span
-              className={
-                pathname.startsWith("/resources") ||
-                pathname === "/careers"
-                  ? styles.active
-                  : ""
-              }
-            >
-              Resources
-            </span>
-
-            <Link
-              href="/resources/blog"
-              className={
-                pathname === "/resources/blog"
-                  ? styles.active
-                  : ""
-              }
-            >
-              Blog
-            </Link>
-
-            <Link
-              href="/careers"
-              className={
-                pathname === "/careers"
-                  ? styles.active
-                  : ""
-              }
-            >
-              Careers
-            </Link>
-          </div>
-        </div>
+          ))}
+      </div>
+    );
+  })}
+</div>
 
         {/* BUTTON */}
         <div className={styles.mobileCTA}>
