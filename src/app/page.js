@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./page.module.scss";
 import Link from "next/link";
 
@@ -9,6 +9,9 @@ import CalendlyButton from "../components/CalendlyButton";
 import Head from "next/head";
 
 export default function Home() {
+
+  const heroRef = useRef(null);
+const slatRef = useRef(null);
   const sentences = [
     "Finance Reimagined",
     "Retail Redefined",
@@ -18,6 +21,46 @@ export default function Home() {
     "Transactions Modernized",
   ];
 
+
+  useEffect(() => {
+const hero = heroRef.current;
+
+if (!hero || !slatRef.current) return;
+
+const slats = slatRef.current.querySelectorAll(`.${styles.slat}`);
+  const content   = hero.querySelector(`.${styles.heroContent}`);
+  const scrollCue = hero.querySelector(`.${styles.scrollCue}`);
+
+  const SLAT_COUNT = 7;
+
+  const onScroll = () => {
+    const scrollY  = window.scrollY;
+    const heroH    = hero.offsetHeight;
+
+    // Slats start at 30% scroll, fully closed by 85%
+    const slatStart = heroH * 0.30;
+    const slatEnd   = heroH * 0.85;
+    const slatP     = Math.min(Math.max((scrollY - slatStart) / (slatEnd - slatStart), 0), 1);
+
+    // Stagger each slat slightly
+    slats.forEach((slat, i) => {
+      const delay  = i / (SLAT_COUNT * 1.5); // 0 → 0.43
+      const localP = Math.min(Math.max((slatP - delay) / (1 - delay), 0), 1);
+      // Ease out cubic
+      const eased  = 1 - Math.pow(1 - localP, 3);
+      slat.style.transform = `scaleX(${eased})`;
+    });
+
+    // Content fades out before slats close
+    const contentP = Math.min(Math.max((scrollY - heroH * 0.1) / (heroH * 0.4), 0), 1);
+    content.style.opacity  = 1 - contentP;
+    content.style.transform = `translateY(${contentP * -40}px)`;
+    scrollCue.style.opacity = Math.max(1 - contentP * 3, 0);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  return () => window.removeEventListener('scroll', onScroll);
+}, []);
   const [displayText, setDisplayText] = useState("");
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -107,7 +150,7 @@ export default function Home() {
 
       <main className={styles.home}>
         {/* HERO */}
-        <section className={styles.hero}>
+    <section className={styles.hero} ref={heroRef}>
   <video className={styles.heroVideo} autoPlay muted loop playsInline>
     <source src="/hero-video.mp4" type="video/mp4" />
   </video>
@@ -117,16 +160,20 @@ export default function Home() {
   <div className={styles.heroContent}>
     <h1>
       <span className={styles.lineOne}>Pushing limits,</span>
-
-      <strong className={styles.lineTwo}>
-        driving Innovation forward.
-      </strong>
+      <strong className={styles.lineTwo}>driving Innovation forward.</strong>
     </h1>
   </div>
 
   <div className={styles.scrollCue}>
     <span>Scroll</span>
     <div className={styles.scrollLine}></div>
+  </div>
+
+  {/* Slat overlay — JS will animate these */}
+  <div className={styles.slatOverlay} ref={slatRef}>
+    {Array.from({ length: 7 }).map((_, i) => (
+      <div key={i} className={styles.slat} />
+    ))}
   </div>
 </section>
 
@@ -191,32 +238,32 @@ export default function Home() {
             <h2>Our Work</h2>
 
             <div className={styles.workList}>
-             {[
-  {
-    title: "Agera Capital Group",
-    link: "https://ageracapitalgroup.com/",
-    description:
-      "Serving across multiple time zones for traders who can start trading with a browser, breaking the dependency on a mobile app.Supporting multiple languages with partner programs to start marketing money, custodial accounts, admin and agent access segregated by management."
-  },
-  {
-    title: "Prime CRM",
-    link: "https://crm.znrsolutions.com/",
-    description:
-      "Realtime call monitoring, reporting, browser calling, user hierarchy and lead imports with previous communication and history.Segregate your operations into multiple teams with efficient management and monitoring."
-  },
-  {
-    title: "PRIME HRM",
-    link: "https://ats.znrsolutions.com/",
-    description:
-      "Manage your employees with our smart HRM, from hiring to payroll, with KPI monitoring to make the right decisions to retain the best performers. Easy migration from existing Excel sheets or software for smart ATS. For a smart approach to cluster best talents based on keywords. Removing the hustle of interview stages with pipelines with just drag and drop."
-  },
-  {
-    title: "Shinrai Wallet",
-    link: "https://www.shinraiwallet.com",
-    description:
-      "Built on the Ethereum network for lower gas fees and efficiency. Create custodial wallets with full access that can be integrated to a platform, game or receive payments with a link.You can make your client deposit or withdraw without any limitations from 1 USDT to 10,000 USDT with no minimum or maximum transaction limitation."
-  }
-].map((item, index) => (
+              {[
+                {
+                  title: "Agera Capital Group",
+                  link: "https://ageracapitalgroup.com/",
+                  description:
+                    "Serving across multiple time zones for traders who can start trading with a browser, breaking the dependency on a mobile app.Supporting multiple languages with partner programs to start marketing money, custodial accounts, admin and agent access segregated by management.",
+                },
+                {
+                  title: "Prime CRM",
+                  link: "https://crm.znrsolutions.com/",
+                  description:
+                    "Realtime call monitoring, reporting, browser calling, user hierarchy and lead imports with previous communication and history.Segregate your operations into multiple teams with efficient management and monitoring.",
+                },
+                {
+                  title: "PRIME HRM",
+                  link: "https://ats.znrsolutions.com/",
+                  description:
+                    "Manage your employees with our smart HRM, from hiring to payroll, with KPI monitoring to make the right decisions to retain the best performers. Easy migration from existing Excel sheets or software for smart ATS. For a smart approach to cluster best talents based on keywords. Removing the hustle of interview stages with pipelines with just drag and drop.",
+                },
+                {
+                  title: "Shinrai Wallet",
+                  link: "https://www.shinraiwallet.com",
+                  description:
+                    "Built on the Ethereum network for lower gas fees and efficiency. Create custodial wallets with full access that can be integrated to a platform, game or receive payments with a link.You can make your client deposit or withdraw without any limitations from 1 USDT to 10,000 USDT with no minimum or maximum transaction limitation.",
+                },
+              ].map((item, index) => (
                 <div
                   key={index}
                   className={`${styles.workRow} ${
@@ -240,20 +287,20 @@ export default function Home() {
                     </div>
                   </div>
 
-         <div className={styles.workContent}>
-  <h3>{item.title}</h3>
+                  <div className={styles.workContent}>
+                    <h3>{item.title}</h3>
 
-  <p>{item.description}</p>
+                    <p>{item.description}</p>
 
-  <a
-    href={item.link}
-    target="_blank"
-    rel="noopener noreferrer"
-    className={styles.projectBtn}
-  >
-    Visit Website →
-  </a>
-</div>
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.projectBtn}
+                    >
+                      Visit Website →
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>
@@ -277,39 +324,39 @@ export default function Home() {
               long-term growth for modern businesses.
             </p>
 
-<div className={styles.processTimeline}>
-  {[
-    {
-      title: "Understand Business Objectives",
-      desc: "Align technology initiatives with business goals and long-term vision.",
-    },
-    {
-      title: "Market & Competitor Analysis",
-      desc: "Evaluate industry trends, competitors and market opportunities.",
-    },
-    {
-      title: "User Centered Thinking",
-      desc: "Focus on customer needs, usability and exceptional user experiences.",
-    },
-    {
-      title: "Compliance & Quality",
-      desc: "Ensure security, regulatory compliance and quality assurance standards.",
-    },
-    {
-      title: "Go to Market Strategy",
-      desc: "Plan launch, adoption, growth and ongoing optimization strategies.",
-    },
-  ].map((item, index) => (
-    <div className={styles.processItem} key={index}>
-      <div className={styles.processNumber}>
-        {String(index + 1).padStart(2, "0")}
-      </div>
+            <div className={styles.processTimeline}>
+              {[
+                {
+                  title: "Understand Business Objectives",
+                  desc: "Align technology initiatives with business goals and long-term vision.",
+                },
+                {
+                  title: "Market & Competitor Analysis",
+                  desc: "Evaluate industry trends, competitors and market opportunities.",
+                },
+                {
+                  title: "User Centered Thinking",
+                  desc: "Focus on customer needs, usability and exceptional user experiences.",
+                },
+                {
+                  title: "Compliance & Quality",
+                  desc: "Ensure security, regulatory compliance and quality assurance standards.",
+                },
+                {
+                  title: "Go to Market Strategy",
+                  desc: "Plan launch, adoption, growth and ongoing optimization strategies.",
+                },
+              ].map((item, index) => (
+                <div className={styles.processItem} key={index}>
+                  <div className={styles.processNumber}>
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
 
-      <h3>{item.title}</h3>
-      <p>{item.desc}</p>
-    </div>
-  ))}
-</div>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -319,11 +366,11 @@ export default function Home() {
           <div className={styles.gridLines}></div>
 
           <div className={styles.ctaContainer}> */}
-            {/* <div className={styles.eyebrow}>
+        {/* <div className={styles.eyebrow}>
             <span className={styles.dot}></span>
             <span>Let's Work Togetsher</span>
           </div> */}
-{/* 
+        {/* 
             <h2>
               Ready to <em>revolutionize</em>
               <br />
@@ -372,8 +419,8 @@ export default function Home() {
             <h2>Built with Purpose</h2>
 
             <div className={styles.gridProducts}> */}
-              {/* PRIME CRM */}
-              {/* <div className={styles.card}>
+        {/* PRIME CRM */}
+        {/* <div className={styles.card}>
                 <div className={styles.logoWrap}>
                   <div style={{ maxWidth: "100%", overflow: "hidden" }}>
                     <svg
@@ -399,13 +446,13 @@ export default function Home() {
                     contacts, and drive revenue growth.
                   </p>
                 </div> */}
-                {/* <a href="" target="_blank" className={styles.link}>
+        {/* <a href="" target="_blank" className={styles.link}>
                 <span>→</span>
               </a> */}
-              {/* </div> */}
+        {/* </div> */}
 
-              {/* PRIME HRM */}
-              {/* <div className={styles.card}>
+        {/* PRIME HRM */}
+        {/* <div className={styles.card}>
                 <div
                   className={styles.logoWrap}
                   style={{ background: "#0f1a16" }}
@@ -454,13 +501,13 @@ export default function Home() {
                     tracking.
                   </p>
                 </div> */}
-                {/* <a href="" target="_blank" className={styles.link}>
+        {/* <a href="" target="_blank" className={styles.link}>
                 <span>→</span>
               </a> */}
-              {/* </div> */}
+        {/* </div> */}
 
-              {/* PRIME TRADER */}
-              {/* <div className={styles.card}>
+        {/* PRIME TRADER */}
+        {/* <div className={styles.card}>
                 <div
                   className={styles.logoWrap}
                   style={{ background: "#0f1520" }}
@@ -517,44 +564,41 @@ export default function Home() {
                     for retail and institutional traders.
                   </p>
                 </div> */}
-                {/* <a href="" target="_blank" className={styles.link}>
+        {/* <a href="" target="_blank" className={styles.link}>
              <span>→</span>
                 </a> */}
-              {/* </div>
+        {/* </div>
             </div>
           </div>
         </section> */}
 
+        <section className={styles.latest}>
+          <div className={styles.latestContainer}>
+            <h2 className={styles.latestTitle}>Our strong partners</h2>
 
+            <p>
+              Our partnerships with trusted technology providers help us deliver
+              secure, scalable and future ready digital solutions for modern
+              businesses.
+            </p>
 
-
-<section className={styles.latest}>
-  <div className={styles.latestContainer}>
-    <h2 className={styles.latestTitle}>Our strong partners</h2>
-
-    <p>
-      Our partnerships with trusted technology providers help us deliver
-        secure, scalable and future ready digital solutions for modern businesses.
-    </p>
-
-    <div className={styles.latestGrid}>
-      {[
-        "/partners/google.png",
-        "/partners/aws.svg",
-        "/partners/alchemy-logo.svg",
-        "/partners/microsoft_azure.png",
-        "/partners/contabo.png",
-        "/partners/salesforce.png",
-        "/partners/pega.png",
-      ].map((img, index) => (
-        <div className={styles.latestCard} key={index}>
-          <img src={img} alt="Latest update" />
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
+            <div className={styles.latestGrid}>
+              {[
+                "/partners/google.png",
+                "/partners/aws.svg",
+                "/partners/alchemy-logo.svg",
+                "/partners/microsoft_azure.png",
+                "/partners/contabo.png",
+                "/partners/salesforce.png",
+                "/partners/pega.png",
+              ].map((img, index) => (
+                <div className={styles.latestCard} key={index}>
+                  <img src={img} alt="Latest update" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* <section className={styles.blog}>
           <div className={styles.container}>

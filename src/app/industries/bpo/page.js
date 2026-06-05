@@ -1,299 +1,209 @@
 import styles from "./bpo.module.scss";
 
 export default function BPOPage() {
-  const services = [
+  const products = [
     {
-      title: "Customer Support",
-      text: "Deliver exceptional customer experiences through email, chat, and voice support.",
+      label: "CRM Platform",
+      title: "Manage leads, customers, agents, and sales from one system.",
+      text: "Our CRM helps businesses organize leads, track follow ups, monitor agent performance, and improve sales conversion through structured pipelines and real-time reporting.",
+      features: [
+        "Lead allocation",
+        "Sales pipeline tracking",
+        "Agent performance reports",
+        "Follow up management",
+      ],
+      benefit:
+        "Useful for sales teams, BPOs, fintech companies, agencies, and any business that handles customer leads.",
     },
     {
-      title: "Lead Management",
-      text: "Organize, qualify, and manage leads efficiently to improve conversion rates.",
+      label: "HRM & ATS Platform",
+      title: "Simplify employee management, hiring, attendance, and payroll.",
+      text: "Our HRM and ATS solution helps businesses manage recruitment, employee records, attendance, payroll, leave, and internal HR workflows efficiently.",
+      features: [
+        "Employee management",
+        "Attendance tracking",
+        "Payroll support",
+        "Recruitment pipeline",
+      ],
+      benefit:
+        "Useful for growing businesses that want better control over staff, recruitment, and HR operations.",
     },
     {
-      title: "Back Office Operations",
-      text: "Reduce operational workload with reliable administrative support.",
+      label: "Agera Capital Group",
+      title: "A trading platform built for market access and financial growth.",
+      text: "Agera Capital Group allows users to access trading opportunities, market tools, financial education, and structured support for modern trading journeys.",
+      features: [
+        "Trading access",
+        "Market insights",
+        "Portfolio tools",
+        "Trading support",
+      ],
+      benefit:
+        "Useful for individuals, investors, and trading focused communities looking for a professional trading ecosystem.",
     },
     {
-      title: "Data Processing",
-      text: "Accurate and secure data entry, validation, and management services.",
+      label: "Fintech & Payment Systems",
+      title: "Build secure digital payment and financial platforms.",
+      text: "We design fintech systems that support wallets, payment gateways, transaction tracking, onboarding, reporting, and secure digital finance workflows.",
+      features: [
+        "Wallet systems",
+        "Payment gateway integration",
+        "Transaction monitoring",
+        "Financial dashboards",
+      ],
+      benefit:
+        "Useful for fintech startups, financial service providers, retail businesses, and digital platforms.",
     },
     {
-      title: "Virtual Assistance",
-      text: "Dedicated support professionals for daily operational requirements.",
-    },
-    {
-      title: "CRM Administration",
-      text: "Maintain customer records, workflows, and reporting systems effectively.",
-    },
-  ];
-
-  const metrics = [
-    {
-      title: "Agent Productivity",
-      text: "Track team performance and efficiency.",
-    },
-    {
-      title: "Response Time Monitoring",
-      text: "Measure customer response and resolution times.",
-    },
-    {
-      title: "Lead Conversion Reporting",
-      text: "Monitor lead performance and sales opportunities.",
-    },
-    {
-      title: "Customer Satisfaction Tracking",
-      text: "Identify areas for service improvement.",
-    },
-    {
-      title: "Operational Performance",
-      text: "Analyze workflow efficiency and resource utilization.",
-    },
-    {
-      title: "Quality Assurance Monitoring",
-      text: "Maintain consistent service standards.",
-    },
-  ];
-
-  const monitorSteps = [
-    {
-      title: "Agent Activity Tracking",
-      text: "Monitor productivity, attendance, and task completion.",
-    },
-    {
-      title: "Response & Resolution Time",
-      text: "Measure service speed and operational efficiency.",
-    },
-    {
-      title: "Customer Interaction Quality",
-      text: "Maintain service consistency and compliance.",
-    },
-    {
-      title: "Campaign & Lead Performance",
-      text: "Track conversion opportunities and sales effectiveness.",
-    },
-    {
-      title: "Continuous Improvement",
-      text: "Use reporting insights to optimize operations.",
-    },
-  ];
-
-  const systems = [
-    {
-      title: "CRM Management",
-      text: "Salesforce, HubSpot, Zoho, and custom CRMs.",
-    },
-    {
-      title: "Lead Pipeline Management",
-      text: "Structured follow-up processes.",
-    },
-    {
-      title: "Reporting & Analytics",
-      text: "Real-time performance dashboards.",
-    },
-    {
-      title: "Workflow Automation",
-      text: "Reduce repetitive operational tasks.",
-    },
-  ];
-
-  const process = [
-    {
-      title: "Understand Operations",
-      text: "Analyze business goals and workflows.",
-    },
-    {
-      title: "Design Workflow",
-      text: "Create structured operating procedures.",
-    },
-    {
-      title: "Build Dedicated Team",
-      text: "Assign trained professionals.",
-    },
-    {
-      title: "Monitor Performance",
-      text: "Track KPIs and service quality.",
-    },
-    {
-      title: "Scale & Optimize",
-      text: "Continuously improve operational outcomes.",
-    },
-  ];
-
-  const whyZnr = [
-    {
-      title: "Performance Driven",
-      text: "Focused on measurable business outcomes.",
-    },
-    {
-      title: "Scalable Operations",
-      text: "Teams that grow with your business.",
-    },
-    {
-      title: "Technology Enabled",
-      text: "Modern reporting and operational systems.",
-    },
-    {
-      title: "Quality Assurance",
-      text: "Structured monitoring and improvement.",
-    },
-    {
-      title: "Industry Expertise",
-      text: "Experience across fintech, retail, BPO, and enterprise sectors.",
-    },
-    {
-      title: "Cost Efficient",
-      text: "Reduce operational costs while maintaining service quality.",
+      label: "BPO Operations",
+      title: "Combine trained teams with technologydriven operations.",
+      text: "Our BPO services support customer care, lead management, data processing, CRM administration, back office work, and virtual assistance.",
+      features: [
+        "Customer support",
+        "Lead management",
+        "Back office support",
+        "Virtual assistance",
+      ],
+      benefit:
+        "Useful for companies that want to reduce workload, increase productivity, and scale operations cost effectively.",
     },
   ];
 
   const benefits = [
-    "Improved customer satisfaction",
-    "Faster response times",
-    "Better lead conversion rates",
-    "Reduced operational overhead",
-    "Greater workflow visibility",
-    "Higher team productivity",
-    "Scalable support operations",
-    "Enhanced reporting and analytics",
+    "Better lead conversion",
+    "Improved team productivity",
+    "Reduced operational workload",
+    "Real time business visibility",
+    "Stronger customer management",
+    "Automated reporting",
+    "Scalable support teams",
+    "Technology backed operations",
+  ];
+
+  const process = [
+    {
+      title: "Understand Your Business",
+      text: "We analyze your current workflow, team structure, customer journey, and operational challenges.",
+    },
+    {
+      title: "Recommend The Right System",
+      text: "We identify whether your business needs CRM, HRM, fintech systems, trading tools, BPO teams, or a custom solution.",
+    },
+    {
+      title: "Implement & Customize",
+      text: "We configure the platform, workflows, reports, permissions, and operational process based on your business.",
+    },
+    {
+      title: "Train & Support Your Team",
+      text: "We help your team use the system effectively while providing ongoing technical and operational support.",
+    },
+    {
+      title: "Monitor & Improve",
+      text: "We track performance, reporting, productivity, and customer outcomes to continuously improve operations.",
+    },
   ];
 
   return (
     <main className={styles.bpoPage}>
-      {/* HERO */}
-      <section className={styles.hero}>
-        <div className={styles.heroOverlay}></div>
+    <section className={styles.hero}>
+  <div className={styles.heroContent}>
+    <div className={styles.heroBadge}>
+      TECHNOLOGY POWERED BPO SOLUTIONS
+    </div>
 
-        <div className={styles.heroContent}>
-          <span>Business Process Outsourcing</span>
+    <h1>
+      Systems, People & Processes
+      <br />
+      <span>Built For Modern Businesses</span>
+    </h1>
 
-          <h1>Empowering modern businesses with scalable BPO operations.</h1>
+    <p>
+      ZNR combines business technology, operational teams, CRM systems,
+      HR platforms, fintech solutions, and BPO expertise to help
+      organizations scale efficiently and sustainably.
+    </p>
 
-          <p>
-            From customer support and lead management to reporting and
-            operational workflows, ZNR helps businesses build efficient,
-            measurable, and cost-effective outsourcing solutions that improve
-            customer experience and business performance.
-          </p>
+    
+  </div>
+</section>
 
-          <div className={styles.heroButtons}>
-            <a href="/contact">Schedule Consultation</a>
-            <a href="#solutions">Explore Solutions</a>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY MODERN BPO */}
       <section className={styles.intro}>
         <div className={styles.container}>
-          <span className={styles.eyebrow}>Why Modern BPO Matters</span>
+          <span className={styles.eyebrow}>Why ZNR BPO</span>
 
-          <h2>More than outsourcing. Built for performance.</h2>
+          <h2>More than outsourcing. We give you the technology too.</h2>
 
           <p>
-            Today&apos;s businesses need more than additional manpower. They
-            need visibility, accountability, quality assurance, and measurable
-            outcomes.
+            Most businesses do not only need people. They need proper systems,
+            tracking, reporting, automation, and performance visibility. That is
+            why ZNR provides both business software and operational support.
           </p>
 
           <p>
-            Our BPO solutions combine skilled professionals, structured
-            workflows, performance monitoring, and modern technology to help
-            organizations operate efficiently while maintaining exceptional
-            service standards.
+            Whether you need a CRM, HRM, trading platform, fintech solution, or
+            a dedicated BPO team, we help you build the right structure to
+            operate, scale, and grow.
           </p>
         </div>
       </section>
 
-      {/* WHAT WE PROVIDE */}
-      <section className={styles.section} id="solutions">
+      <section className={styles.productsSection} id="products">
         <div className={styles.sectionHeader}>
-          <span className={styles.eyebrow}>What We Provide</span>
-          <h2>Comprehensive BPO Solutions</h2>
-        </div>
-
-        <div className={styles.cardGrid}>
-          {services.map((item, index) => (
-            <div className={styles.card} key={item.title}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* PERFORMANCE DASHBOARD */}
-      <section className={`${styles.section} ${styles.lightSection}`}>
-        <div className={styles.sectionHeader}>
-          <span className={styles.eyebrow}>BPO Performance Dashboard</span>
-          <h2>Real-Time Visibility Across Operations</h2>
-
+          <span className={styles.eyebrow}>Our Product Ecosystem</span>
+          <h2>Business solutions powered by ZNR technology</h2>
           <p>
-            Monitor performance, productivity, and customer interactions through
-            structured reporting and operational insights.
+            Explore the platforms and services businesses can use to improve
+            operations, customer management, finance, HR, and performance.
           </p>
         </div>
 
-        <div className={styles.cardGrid}>
-          {metrics.map((item, index) => (
-            <div className={styles.metricCard} key={item.title}>
-              <div className={styles.metricIcon}>
-                {String(index + 1).padStart(2, "0")}
+        <div className={styles.productGrid}>
+          {products.map((item, index) => (
+            <div className={styles.productCard} key={item.label}>
+              <div className={styles.productTop}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <p>{item.label}</p>
               </div>
 
               <h3>{item.title}</h3>
-              <p>{item.text}</p>
+              <p className={styles.productText}>{item.text}</p>
+
+              <div className={styles.featureList}>
+                {item.features.map((feature) => (
+                  <div key={feature}>{feature}</div>
+                ))}
+              </div>
+
+              <div className={styles.benefitBox}>
+                <strong>Why it is useful</strong>
+                <p>{item.benefit}</p>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* WHAT WE MONITOR */}
-      <section className={styles.section}>
-        <div className={styles.sectionHeader}>
-          <span className={styles.eyebrow}>What We Monitor</span>
-          <h2>Operational Intelligence That Drives Growth</h2>
-        </div>
-
-        <div className={styles.timeline}>
-          {monitorSteps.map((item, index) => (
-            <div className={styles.timelineItem} key={item.title}>
-              <div>{String(index + 1).padStart(2, "0")}</div>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CRM */}
-      <section className={`${styles.section} ${styles.lightSection}`}>
-        <div className={styles.sectionHeader}>
-          <span className={styles.eyebrow}>CRM & Business Systems</span>
-          <h2>Integrated With Your Business Workflow</h2>
-
+      <section className={styles.benefits}>
+        <div className={styles.benefitsContent}>
+          <span className={styles.eyebrow}>Business Benefits</span>
+          <h2>What your business gains with ZNR</h2>
           <p>
-            Our BPO teams work seamlessly with your existing systems and
-            workflows.
+            Our solutions are designed to improve control, productivity,
+            visibility, and customer outcomes.
           </p>
         </div>
 
-        <div className={styles.systemGrid}>
-          {systems.map((item) => (
-            <div className={styles.systemCard} key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </div>
+        <div className={styles.benefitsList}>
+          {benefits.map((item) => (
+            <div key={item}>{item}</div>
           ))}
         </div>
       </section>
 
-      {/* PROCESS */}
-      <section className={styles.section}>
+      <section className={styles.processSection}>
         <div className={styles.sectionHeader}>
           <span className={styles.eyebrow}>Our Process</span>
-          <h2>Our Approach</h2>
+          <h2>How we build your operational system</h2>
         </div>
 
         <div className={styles.timeline}>
@@ -307,49 +217,16 @@ export default function BPOPage() {
         </div>
       </section>
 
-      {/* WHY ZNR */}
-      <section className={`${styles.section} ${styles.lightSection}`}>
-        <div className={styles.sectionHeader}>
-          <span className={styles.eyebrow}>Why ZNR</span>
-          <h2>Why Businesses Choose ZNR</h2>
-        </div>
-
-        <div className={styles.cardGrid}>
-          {whyZnr.map((item, index) => (
-            <div className={styles.card} key={item.title}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* BENEFITS */}
-      <section className={styles.benefits}>
-        <div className={styles.benefitsContent}>
-          <span className={styles.eyebrow}>Key Benefits</span>
-          <h2>Business Outcomes You Can Expect</h2>
-        </div>
-
-        <div className={styles.benefitsList}>
-          {benefits.map((item) => (
-            <div key={item}>{item}</div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className={styles.cta}>
-        <h2>Ready to optimize your business operations?</h2>
+      {/* <section className={styles.cta}>
+        <h2>Ready to improve your business operations?</h2>
 
         <p>
-          Partner with ZNR to build reliable, scalable, and performance-driven
-          outsourcing solutions tailored to your business goals.
+          Partner with ZNR to choose the right platform, build the right team,
+          and create a scalable business operation.
         </p>
 
         <a href="/contact">Talk To Our Team</a>
-      </section>
+      </section> */}
     </main>
   );
 }

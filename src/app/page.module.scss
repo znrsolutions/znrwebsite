@@ -615,7 +615,28 @@
     width: 64px;
   }
 }
+/* ================= SLAT TRANSITION ================= */
+.slatOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  pointer-events: none;
+}
 
+.slat {
+  flex: 1;
+  height: 100%;
+  background: #ffffff; /* match your next section's bg */
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
+}
+
+/* Alternate slats open from right */
+.slat:nth-child(even) {
+  transform-origin: right center;
+}
 /* ================= ABOUT ================= */
 .about {
   padding: 80px 20px;
