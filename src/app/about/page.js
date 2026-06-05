@@ -71,77 +71,47 @@ export default function About() {
             development for modern businesses.
           </p>
         </section>
+{/* VISION & MISSION */}
+<section className={styles.visionMission}>
+  <div className={styles.visionMissionContainer}>
+    
+    <div className={styles.infoCard}>
+      <span className={styles.cardLabel}>OUR VISION</span>
 
-        {/* BEGINNING SECTION */}
-        <section className={styles.beginning}>
-          <div className={styles.container}>
-            {/* LEFT IMAGES */}
-           
+      <h2>Company Vision</h2>
 
-<div className={styles.images}>
-  {/* BIG IMAGE */}
-  <Image
-    src="/about1.png"
-    alt="ZNR Solutions team working on digital products"
-    width={600}
-    height={400}
-    className={styles.bigImg}
-  />
+      <p>
+       Build fintech solutions that simplify life with software solutions powered by Blockchain and traditional payment gateways.
+      </p>
+    </div>
 
-  {/* SMALL IMAGES */}
-  <div className={styles.smallImages}>
-    <Image
-      src="/about2.png"
-      alt="ZNR development and collaboration"
-      width={250}
-      height={180}
-    />
+    <div className={styles.infoCard}>
+      <span className={styles.cardLabel}>OUR MISSION</span>
 
-    <Image
-      src="/about3.png"
-      alt="ZNR team brainstorming and planning"
-      width={250}
-      height={180}
-    />
+      <h2>Company Mission</h2>
+
+      <p>
+     At ZNR, we focus on building the next generation of fintech solutions, breaking the limitations created by traditional payment methods.
+      </p>
+
+      <p>
+        We're working with a mission of leading fintech solutions. Leading fintech solutions making the future of the fintech space transparent.
+      </p>
+    </div>
+
   </div>
-</div>
-
-            {/* RIGHT CONTENT */}
-            <div className={styles.content}>
-              <h2>Company Vision</h2>
-
-              <p>
-                Build fintech solutions that simplify life with software solutions powered by Blockchain and traditional payment gateways.
-              </p>
-
-              <p>
-           
-              </p>
-
-
-{/* <div className={styles.buttons}>
-  <Link href="/solutions" className={styles.primary}>
-    Our Services
-  </Link>
-
-  <Link href="/careers" className={styles.secondary}>
-    Life at ZNR
-  </Link>
-</div> */}
-            </div>
-          </div>
-        </section>
+</section>
 
         {/* MISSION SECTION (SINGLE IMAGE) */}
         {/* <section className={styles.missionSingle}>
           <div className={styles.container}> */}
-            {/* LEFT IMAGE */}
-            {/* <div className={styles.image}>
+        {/* LEFT IMAGE */}
+        {/* <div className={styles.image}>
               <img src="/about8.png" alt="Mission" />
             </div> */}
 
-            {/* RIGHT CONTENT */}
-            {/* <div className={styles.content}>
+        {/* RIGHT CONTENT */}
+        {/* <div className={styles.content}>
               <h2>Mission</h2>
 
               <p>
@@ -162,79 +132,50 @@ export default function About() {
           </div>
         </section> */}
 
-        {/* GLOBAL SECTION */}
-        <section className={styles.global}>
-          <div className={styles.container}>
-            {/* LEFT CONTENT */}
-            <div className={styles.content}>
-              <h2>Company Mission</h2>
+        <section className={styles.team}>
+          <div className={styles.teamContainer}>
+            <h2>Our Team</h2>
 
-             <p>
-                At ZNR, we focus on building the next generation of fintech solutions, breaking the limitations created by traditional payment methods.
-              </p>
+            <div className={styles.teamGrid}>
+              {[
+                {
+                  img: "/founder.jpg",
+                  title: "Amman Lantra",
+                  text: "Chief Executive Officer",
+                },
+                {
+                  img: "/azni.png",
+                  title: "Siddique Azni",
+                  text: "Chief Operations Officer",
+                },
+                {
+                  img: "/azeez.png",
+                  title: "Azeez Sanoon",
+                  text: "Chief Financial Officer",
+                },
+                {
+                  img: "/sumar.png",
+                  title: "Sumar Fawaz",
+                  text: "Chief Technology Officer",
+                },
+                {
+                  img: "/mustafa.png",
+                  title: "Mustafa Asif",
+                  text: "Senior Business Analyst",
+                },
+              ].map((item, index) => (
+                <div className={styles.teamCard} key={index}>
+                  <img src={item.img} alt={item.title} />
 
-              <p>
-                We're working with a mission of leading fintech solutions. Leading fintech solutions making the future of the fintech space transparent.
-              </p>
-
-              {/* <p>We do more than just construct projects.</p>
-              <p>We construct growth supporting systems.</p> */}
-            </div>
-
-            {/* RIGHT IMAGES */}
-            {/* RIGHT IMAGE */}
-            <div className={styles.image0}>
-              <img src="/about9.png" alt="Team" />
+                  <div className={styles.teamContent}>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
-
-
-<section className={styles.team}>
-  <div className={styles.teamContainer}>
-    <h2>Our Team</h2>
-
-    <div className={styles.teamGrid}>
-      {[
-        {
-          img: "/founder.jpg",
-          title: "Amman Lantra",
-          text: "Chief Executive Officer",
-        },
-        {
-          img: "/azni.png",
-          title: "Siddique Azni",
-          text: "Chief Operations Officer",
-        },
-        {
-          img: "/azeez.png",
-          title: "Azeez Sanoon",
-          text: "Chief Financial Officer",
-        },
-        {
-          img: "/sumar.png",
-          title: "Sumar Fawaz",
-          text: "Chief Technology Officer",
-        },
-        {
-          img: "/mustafa.png",
-          title: "Mustafa Asif",
-          text: "Senior Business Analyst",
-        },
-      ].map((item, index) => (
-        <div className={styles.teamCard} key={index}>
-          <img src={item.img} alt={item.title} />
-
-          <div className={styles.teamContent}>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
 
         {/* CULTURE STATEMENT */}
         <section className={styles.culture}>
@@ -321,14 +262,14 @@ export default function About() {
         </section>
 
         <div className={styles.links}>
-  <Link href="/solutions" className={styles.linkItem}>
-    Explore Our Services →
-  </Link>
+          <Link href="/solutions" className={styles.linkItem}>
+            Explore Our Services →
+          </Link>
 
-  <Link href="/careers" className={styles.linkItem}>
-    Join Our Team →
-  </Link>
-</div>
+          <Link href="/careers" className={styles.linkItem}>
+            Join Our Team →
+          </Link>
+        </div>
       </main>
     </>
   );

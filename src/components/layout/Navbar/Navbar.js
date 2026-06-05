@@ -105,10 +105,20 @@ export default function Navbar() {
       <div className={`${styles.mobileMenu} ${open ? styles.show : ""}`}>
         
         {/* TOP */}
-        <div className={styles.mobileHeader}>
-          <span>Menu</span>
-          <button onClick={() => setOpen(false)}>✕</button>
-        </div>
+       {/* TOP */}
+<div className={styles.mobileHeader}>
+  <Link href="/" onClick={() => setOpen(false)}>
+    <Image
+      src="/logo.png"
+      alt="ZNR Logo"
+      width={100}
+      height={40}
+      priority
+    />
+  </Link>
+
+  <button onClick={() => setOpen(false)}>✕</button>
+</div>
 
     {/* LINKS */}
 <div className={styles.mobileLinks}>
