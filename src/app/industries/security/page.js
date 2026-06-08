@@ -151,15 +151,15 @@ export default function SecurityPage() {
             injection, malware, and unexpected downtime.
           </p> */}
 
-          <div className={styles.actions}>
+          {/* <div className={styles.actions}>
             <Link href="/tools/audit" className={styles.primaryBtn}>
               Get Security Audit
-            </Link>  
+            </Link>   */}
 
             {/* <Link href="/tools/audit" className={styles.secondaryBtn}>
               Run Website Audit
             </Link> */}
-          </div>
+          {/* </div> */}
         </div>
       </section>
 

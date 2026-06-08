@@ -229,12 +229,12 @@ export default function Fintech() {
             <p>
               Our engineers combine expertise across frontend, backend, DevOps,
               and security to build financial systems that millions rely on.
-              From microservices architecture to real-time data pipelines, we
+              From microservices architecture to real time data pipelines, we
               deliver with precision.
             </p>
             <ul className={styles.checkList}>
               <li>Microservices & event driven architecture</li>
-              <li>Real-time data processing pipelines</li>
+              <li>Real time data processing pipelines</li>
               <li>Security first engineering practices</li>
               <li>High availability & disaster recovery</li>
             </ul>

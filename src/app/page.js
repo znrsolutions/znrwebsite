@@ -320,7 +320,7 @@ const slats = slatRef.current.querySelectorAll(`.${styles.slat}`);
               We specialize in fintech systems, retail platforms, and
               cybersecurity solutions with a strong focus on performance,
               scalability, and security. Our solutions are built to handle
-              real-world challenges, ensuring reliability, compliance, and
+              real world challenges, ensuring reliability, compliance, and
               long-term growth for modern businesses.
             </p>
 
@@ -328,7 +328,7 @@ const slats = slatRef.current.querySelectorAll(`.${styles.slat}`);
               {[
                 {
                   title: "Understand Business Objectives",
-                  desc: "Align technology initiatives with business goals and long-term vision.",
+                  desc: "Align technology initiatives with business goals and long term vision.",
                 },
                 {
                   title: "Market & Competitor Analysis",

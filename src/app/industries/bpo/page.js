@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./bpo.module.scss";
 
 export default function BPOPage() {
@@ -5,7 +6,8 @@ export default function BPOPage() {
     {
       label: "CRM Platform",
       title: "Manage leads, customers, agents, and sales from one system.",
-      text: "Our CRM helps businesses organize leads, track follow ups, monitor agent performance, and improve sales conversion through structured pipelines and real-time reporting.",
+      link: "https://crm.znrsolutions.com",
+      text: "Our CRM helps businesses organize leads, track follow ups, monitor agent performance, and improve sales conversion through structured pipelines and real time reporting.",
       features: [
         "Lead allocation",
         "Sales pipeline tracking",
@@ -18,6 +20,7 @@ export default function BPOPage() {
     {
       label: "HRM & ATS Platform",
       title: "Simplify employee management, hiring, attendance, and payroll.",
+      link: "https://ats.znrsolutions.com",
       text: "Our HRM and ATS solution helps businesses manage recruitment, employee records, attendance, payroll, leave, and internal HR workflows efficiently.",
       features: [
         "Employee management",
@@ -31,6 +34,7 @@ export default function BPOPage() {
     {
       label: "Agera Capital Group",
       title: "A trading platform built for market access and financial growth.",
+      link: "https://ageracapitalgroup.com",
       text: "Agera Capital Group allows users to access trading opportunities, market tools, financial education, and structured support for modern trading journeys.",
       features: [
         "Trading access",
@@ -42,8 +46,9 @@ export default function BPOPage() {
         "Useful for individuals, investors, and trading focused communities looking for a professional trading ecosystem.",
     },
     {
-      label: "Fintech & Payment Systems",
+      label: "Shinrai Wallet",
       title: "Build secure digital payment and financial platforms.",
+      link: "https://www.shinraiwallet.com",
       text: "We design fintech systems that support wallets, payment gateways, transaction tracking, onboarding, reporting, and secure digital finance workflows.",
       features: [
         "Wallet systems",
@@ -51,22 +56,23 @@ export default function BPOPage() {
         "Transaction monitoring",
         "Financial dashboards",
       ],
-      benefit:
-        "Useful for fintech startups, financial service providers, retail businesses, and digital platforms.",
+      benefit: "Useful for fintech startups, financial service providers, retail businesses, and digital platforms.",
     },
+
     {
-      label: "BPO Operations",
-      title: "Combine trained teams with technologydriven operations.",
-      text: "Our BPO services support customer care, lead management, data processing, CRM administration, back office work, and virtual assistance.",
-      features: [
-        "Customer support",
-        "Lead management",
-        "Back office support",
-        "Virtual assistance",
-      ],
-      benefit:
-        "Useful for companies that want to reduce workload, increase productivity, and scale operations cost effectively.",
-    },
+  label: "BPO Operations",
+  title: "Combine trained teams with technology driven operations.",
+  link: "/industries/bpo",
+  text: "Our BPO services support customer care, lead management, data processing, CRM administration, back office work, and virtual assistance.",
+  features: [
+    "Customer support",
+    "Lead management",
+    "Back office support",
+    "Virtual assistance",
+  ],
+  benefit:
+    "Useful for companies that want to reduce workload, increase productivity, and scale operations cost effectively.",
+},
   ];
 
   const benefits = [
@@ -105,27 +111,25 @@ export default function BPOPage() {
 
   return (
     <main className={styles.bpoPage}>
-    <section className={styles.hero}>
-  <div className={styles.heroContent}>
-    <div className={styles.heroBadge}>
-      TECHNOLOGY POWERED BPO SOLUTIONS
-    </div>
+      <section className={styles.hero}>
+        <div className={styles.heroContent}>
+          <div className={styles.heroBadge}>
+            TECHNOLOGY POWERED BPO SOLUTIONS
+          </div>
 
-    <h1>
-      Systems, People & Processes
-      <br />
-      <span>Built For Modern Businesses</span>
-    </h1>
+          <h1>
+            Systems, People & Processes
+            <br />
+            <span>Built For Modern Businesses</span>
+          </h1>
 
-    <p>
-      ZNR combines business technology, operational teams, CRM systems,
-      HR platforms, fintech solutions, and BPO expertise to help
-      organizations scale efficiently and sustainably.
-    </p>
-
-    
-  </div>
-</section>
+          <p>
+            ZNR combines business technology, operational teams, CRM systems, HR
+            platforms, fintech solutions, and BPO expertise to help
+            organizations scale efficiently and sustainably.
+          </p>
+        </div>
+      </section>
 
       <section className={styles.intro}>
         <div className={styles.container}>
@@ -160,12 +164,25 @@ export default function BPOPage() {
         <div className={styles.productGrid}>
           {products.map((item, index) => (
             <div className={styles.productCard} key={item.label}>
-              <div className={styles.productTop}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <p>{item.label}</p>
-              </div>
+             <div className={styles.productTop}>
+  <span>{String(index + 1).padStart(2, "0")}</span>
 
-              <h3>{item.title}</h3>
+  <Link
+    href={item.link}
+    target={item.link.startsWith("http") ? "_blank" : "_self"}
+    className={styles.productLabel}
+  >
+    {item.label}
+  </Link>
+</div>
+
+              <Link
+                href={item.link}
+                target={item.link?.startsWith("http") ? "_blank" : "_self"}
+                className={styles.productTitle}
+              >
+                <h3>{item.title}</h3>
+              </Link>
               <p className={styles.productText}>{item.text}</p>
 
               <div className={styles.featureList}>
