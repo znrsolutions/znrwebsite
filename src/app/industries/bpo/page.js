@@ -45,19 +45,19 @@ export default function BPOPage() {
       benefit:
         "Useful for individuals, investors, and trading focused communities looking for a professional trading ecosystem.",
     },
-    {
-      label: "Shinrai Wallet",
-      title: "Build secure digital payment and financial platforms.",
-      link: "https://www.shinraiwallet.com",
-      text: "We design fintech systems that support wallets, payment gateways, transaction tracking, onboarding, reporting, and secure digital finance workflows.",
-      features: [
-        "Wallet systems",
-        "Payment gateway integration",
-        "Transaction monitoring",
-        "Financial dashboards",
-      ],
-      benefit: "Useful for fintech startups, financial service providers, retail businesses, and digital platforms.",
-    },
+    // {
+    //   label: "Shinrai Wallet",
+    //   title: "Build secure digital payment and financial platforms.",
+    //   link: "https://www.shinraiwallet.com",
+    //   text: "We design fintech systems that support wallets, payment gateways, transaction tracking, onboarding, reporting, and secure digital finance workflows.",
+    //   features: [
+    //     "Wallet systems",
+    //     "Payment gateway integration",
+    //     "Transaction monitoring",
+    //     "Financial dashboards",
+    //   ],
+    //   benefit: "Useful for fintech startups, financial service providers, retail businesses, and digital platforms.",
+    // },
 
     {
   label: "BPO Operations",

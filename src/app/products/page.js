@@ -190,7 +190,7 @@ export default function Products() {
 
       
       {/* PRIME HRM */}
-      <section className={`${styles.featured} ${styles.alt}`}>
+      {/* <section className={`${styles.featured} ${styles.alt}`}>
         <div className={styles.featuredContainer}>
           <div className={styles.image}>
             <img src="/shinrai.png" alt="Prime HRM human resource management system for payroll, attendance, and employee lifecycle management" />
@@ -213,15 +213,15 @@ export default function Products() {
             <p>
              You can make your client deposit or withdraw without any limitations from 1 USDT to 10,000 USDT with no minimum or maximum transaction limitation.
             </p>
-            <ul className={styles.featureList}>
+            <ul className={styles.featureList}> */}
               {/* <li>Employee onboarding & offboarding</li>
               <li>Payroll & attendance management</li>
               <li>Performance tracking</li>
               <li>Leave & compliance management</li> */}
-            </ul>
+            {/* </ul>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 🔥 INTERNAL LINKS */}
 <div className={styles.links}>

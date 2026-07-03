@@ -257,12 +257,12 @@ const slats = slatRef.current.querySelectorAll(`.${styles.slat}`);
                   description:
                     "Manage your employees with our smart HRM, from hiring to payroll, with KPI monitoring to make the right decisions to retain the best performers. Easy migration from existing Excel sheets or software for smart ATS. For a smart approach to cluster best talents based on keywords. Removing the hustle of interview stages with pipelines with just drag and drop.",
                 },
-                {
-                  title: "Shinrai Wallet",
-                  link: "https://www.shinraiwallet.com",
-                  description:
-                    "Built on the Ethereum network for lower gas fees and efficiency. Create custodial wallets with full access that can be integrated to a platform, game or receive payments with a link.You can make your client deposit or withdraw without any limitations from 1 USDT to 10,000 USDT with no minimum or maximum transaction limitation.",
-                },
+                // {
+                //   title: "Shinrai Wallet",
+                //   link: "https://www.shinraiwallet.com",
+                //   description:
+                //     "Built on the Ethereum network for lower gas fees and efficiency. Create custodial wallets with full access that can be integrated to a platform, game or receive payments with a link.You can make your client deposit or withdraw without any limitations from 1 USDT to 10,000 USDT with no minimum or maximum transaction limitation.",
+                // },
               ].map((item, index) => (
                 <div
                   key={index}
