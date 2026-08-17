@@ -132,7 +132,7 @@ export default function About() {
           </div>
         </section> */}
 
-        <section className={styles.team}>
+        {/* <section className={styles.team}>
           <div className={styles.teamContainer}>
             <h2>Our Team</h2>
 
@@ -175,7 +175,7 @@ export default function About() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* CULTURE STATEMENT */}
         <section className={styles.culture}>
